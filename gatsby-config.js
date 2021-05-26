@@ -53,5 +53,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+          trackingCode: "20124157",
+          respectDNT: false,
+          productionOnly: false,
+      },
+    },
   ],
 }

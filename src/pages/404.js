@@ -2,9 +2,9 @@ import React from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { withUnpublishedPreview } from 'gatsby-source-prismic'
-import { Homepage } from './index'
-import { Page } from '../templates/Page'
-import { News } from '../templates/news'
+import Homepage from './index'
+import Page from '../templates/Page'
+import News from '../templates/news'
 
 
 const NotFoundPage = () => (
