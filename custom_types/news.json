@@ -1,6 +1,8 @@
 {
   "Main": {
     "uid": { "type": "UID", "config": { "label": "UID" } },
+    "hero_image": {},
+    "title": {},
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",

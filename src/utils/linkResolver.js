@@ -1,6 +1,8 @@
 const linkResolver = (doc) => {
-  if (doc.type === 'page' || doc.type === 'news') {
+  if (doc.type === 'page' ) {
     return `/${doc.uid}`
+  } else if (doc.type === 'news') {
+    return `/news/${doc.uid}`
   }
   return '/'
 }

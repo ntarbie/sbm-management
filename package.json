@@ -3,6 +3,7 @@
   "description": "A simple tutorial to get started with Prismic & Gatsby.js",
   "version": "0.1.0",
   "dependencies": {
+    "@prismicio/client": "^5.0.0",
     "gatsby": ">=3.5.1",
     "gatsby-image": ">=3.5.0",
     "gatsby-plugin-google-fonts": ">=1.0.1",
