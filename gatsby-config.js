@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'sbm-management',
+        repositoryName: 'sbmmanagement',
         prismicToolbar: true,
         linkResolver: () => linkResolver,
         schemas: {
