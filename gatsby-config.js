@@ -11,6 +11,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: "gatsby-plugin-transition-link",
@@ -18,6 +19,12 @@ module.exports = {
       //     layout: require.resolve(`./src/components/Layout.js`)
       //   }
    },
+   {
+    resolve: `gatsby-plugin-layout`,
+    options: {
+      component: require.resolve(`./src/components/Layout.js`),
+    },
+  },
     {
       resolve: 'gatsby-source-prismic',
       options: {
@@ -29,6 +36,7 @@ module.exports = {
            navigation: require("./custom_types/navigation.json"),
            page: require("./custom_types/page.json"),
            news: require("./custom_types/news.json")
+           
         },
       },
     },

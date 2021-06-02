@@ -1,9 +1,9 @@
 import React from 'react'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 const FullWidthImage = ({ slice }) => (
-  <section className="full-width-image content-section">
+  <section className="w-full h-96">
     <img 
       src={slice.primary.full_width_image.url}
       alt={slice.primary.full_width_image.alt}

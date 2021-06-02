@@ -3,7 +3,7 @@ const linkResolver = (doc) => {
     return `/${doc.uid}`
   } else if (doc.type === 'news') {
     return `/news/${doc.uid}`
-  }
+  } 
   return '/'
 }
 

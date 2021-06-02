@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+// import Layout from '../components/Layout'
+import SeO from '../components/SEO'
 import SliceZone from '../components/SliceZone'
 
-const News = ({ data }) => {
+const News = ({ data, props }) => {
   if (!data) return null
   const document = data.allPrismicNews.edges[0].node
 
@@ -12,13 +12,15 @@ const News = ({ data }) => {
     return input[0].toUpperCase() + input.slice(1)
   }
 
-  const prismicNavigation = data.prismicNavigation
+  // const prismicNavigation = data.prismicNavigation
 
   return (
-    <Layout isHomepage={false} navigation={prismicNavigation}>
-      <SEO title={capitalizeFirstLetter(document.uid)} />
+    // <Layout isHomepage={false} navigation={prismicNavigation}>
+    <>
+      <SeO title={capitalizeFirstLetter(document.uid)} />
       <SliceZone sliceZone={document.data.body} />
-    </Layout>
+    </>
+    // </Layout>
   )
 }
 

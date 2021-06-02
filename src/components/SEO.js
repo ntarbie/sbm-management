@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-const SEO = ({ description, title }) => (
+const SEO = ({ description, title, body }) => (
   <StaticQuery
     query={`${SeoQuery}`}
     render={(data) => {
@@ -14,6 +14,7 @@ const SEO = ({ description, title }) => (
       return (
         <Helmet>
           <title>{metaTitle}</title>
+          <body className={body}></body>
           <meta name="description" content={metaDescription} />
         </Helmet>
       )

@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+// import Layout from '../components/Layout'
+import SeO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
-import Prismic from '@prismicio/client'
-import gsap from 'gsap'
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
+// import Prismic from '@prismicio/client'
 import NewsGallery from '../components/slices/NewsGallery';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const Homepage = ({ data }) => {
+const Homepage = ({data}) => {
   // const [news, setNews] = useState([])
   // useEffect( () => {
   //   const apiEndpoint = 'https://sbmmanagement.cdn.prismic.io/api/v2'
@@ -30,11 +26,10 @@ const Homepage = ({ data }) => {
   //   }
   //   fetchData();
   // }, []);
-    
+
   if (!data) return null
   const document = data.allPrismicHomepage.edges[0].node.data
   const news = data.allPrismicNews.edges
-  console.log(news);
 
   const bannerContent = {
     title: document.banner_title,
@@ -44,18 +39,20 @@ const Homepage = ({ data }) => {
     background: document.banner_background,
   }
 
-  const prismicNavigation = data.prismicNavigation
+  // const prismicNavigation = data.prismicNavigation
 
   //Client Data
 
 
   return (
-    <Layout isHomepage navigation={prismicNavigation}>
-      <SEO title="Home" />
+    // <Layout isHomepage navigation={prismicNavigation}>
+    <>
+      <SeO title="Home" description="None" />
       <HomepageBanner bannerContent={bannerContent} />
       {news.length > 0 && <NewsGallery news={news}></NewsGallery>}
       {news.length > 0 && <SliceZone sliceZone={document.body} />}
-    </Layout>
+      </>
+    // </Layout>
   )
 }
 
