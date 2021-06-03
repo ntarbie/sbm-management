@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
-// import {Link} from 'gatsby'
+import {Link} from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import cardbg from '../../images/cardbg.svg'
 import gsap from 'gsap'
 
 export default function NewsHero(props) {
@@ -50,10 +51,24 @@ export default function NewsHero(props) {
             </div>
             <h3>Editor's Picks</h3>
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
-                <div className="bg-white rounded shadow"></div>
-                <div className="bg-white rounded shadow"></div>
-                <div className="bg-white rounded shadow"></div>
-                <div className="bg-white rounded shadow"></div>
+                <div className="bg-white rounded shadow flex flex-col p-6" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
+                    <h3 className="text-primary font-black mt-0 ">People</h3>
+                    <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                </div>
+                <div className="bg-white rounded shadow flex flex-col p-6" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
+                    <h3 className="text-primary font-black mt-0 ">Quality</h3>
+                    <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                </div>
+                <div className="bg-white rounded shadow flex flex-col p-6" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
+                    <h3 className="text-primary font-black mt-0 ">Procurement</h3>
+                    <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                </div>
+                <div className="bg-white rounded shadow flex flex-col p-6" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
+                    
+                </div>
             </div>
         </div>
     )

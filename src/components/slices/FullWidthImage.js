@@ -3,8 +3,9 @@ import React from 'react'
 
 
 const FullWidthImage = ({ slice }) => (
-  <section className="w-full h-96">
+  <section className="w-full">
     <img 
+      className="w-full"
       src={slice.primary.full_width_image.url}
       alt={slice.primary.full_width_image.alt}
     />

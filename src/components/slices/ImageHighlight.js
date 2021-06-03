@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 const ImageHighlight = ({ slice }) => (
-  <section className="highlight content-section">
+  <section className="p-4">
     <div className="highlight-left">
       <RichText render={slice.primary.title.raw} />
       <RichText render={slice.primary.description.raw} />

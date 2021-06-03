@@ -5,7 +5,7 @@ import SeO from '../components/SEO'
 import SliceZone from '../components/SliceZone'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Image from 'gatsby-image'
+import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,45 +16,39 @@ const News = ({ data, transitionStatus, entry, exit }) => {
   const social = useRef(null);
   const article = useRef(null);
   useLayoutEffect(() => {
-    if (transitionStatus !== 'entered') return;
-    gsap.to(img.current, {
-      scrollTrigger: {
-        start: 'top top',
-        end: 'bottom top',
-        trigger: img.current,
-        scrub: 0.5,
-        anticipatePin: true,
-      },
-      scale: 1.05,
-      opacity: 0,
-      transformOrigin: 'bottom center',
-      ease: 'ease'
-    })
-    // if (transitionStatus === 'entered'){
-    //   var tl = gsap.timeline();
-    //   tl.fromTo([img.current,tag.current,title.current,social.current,article.current], {opacity: 0},{
-    //     opacity: 1,
-    //     ease: 'power2.inOut',
-    //     duration: 1,
-    //     stagger: 0.2
-    //   })
-
-    // }
-  })
-  if (!data) return null
-  const document = data.allPrismicNews.edges[0].node
-
-  const capitalizeFirstLetter = (input) => {
-    return input[0].toUpperCase() + input.slice(1)
-  }
-
-  // const prismicNavigation = data.prismicNavigation
-  return (
-    // <Layout isHomepage={false} navigation={prismicNavigation}>
+    // if (transitionStatus !== 'entered') return;
+    // gsap.to(img.current, {
+    //   scrollTrigger: {
+    //     start: 'top top',
+    //     end: 'bottom top',
+    //     trigger: img.current,
+    //     scrub: 0.5,
+    //     anticipatePin: true,
+    //   },
+    //   scale: 1.05,
+    //   opacity: 0,
+    //   transformOrigin: 'bottom center',
+    //   ease: 'ease'
+    // })
+      })
+      if (!data) return null
+      const document = data.allPrismicNews.edges[0].node
+      const image = getImage(data.allPrismicNews.edges[0].node.data.hero_image.thumbnails.HDx500.localFile);
+      
+      const capitalizeFirstLetter = (input) => {
+        return input[0].toUpperCase() + input.slice(1)
+      }
+      
+      // const prismicNavigation = data.prismicNavigation
+      return (
+        // <Layout isHomepage={false} navigation={prismicNavigation}>
     <>
       <SeO title={capitalizeFirstLetter(document.uid)} body="negative-header"/>
-      <img ref={img} className="w-full h-96 object-cover" src={document.data.hero_image.thumbnails.HDx500.url}></img>
-      <div className="p-4 mt-4">
+      {/* <img  src={document.data.hero_image.thumbnails.HDx500.url}></img> */}
+      
+      <GatsbyImage className="w-full h-96 block" image={image}></GatsbyImage>
+      <div className="bg-white pb-16">
+      <div className="p-4">
       <div className="relative max-w-screen-md mx-auto">
         <div ref={social} className="xl:absolute top-0 transform xl:-translate-x-20 flex xl:flex-col">
           <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">F</div>
@@ -69,6 +63,7 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       <div ref={article}>
       <SliceZone sliceZone={document.data.body} />
       </div>
+      </div>
     </>
     // </Layout>
   )
@@ -82,11 +77,25 @@ query NewsQuery($uid: String) {
         uid
         data {
           hero_image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, transformOptions: {fit: COVER})
+              }
+            }
             thumbnails {
               HDx500 {
                 alt
                 copyright
                 url
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      transformOptions: {fit: COVER}
+                    )
+                  }
+                }
               }
             }
           }
