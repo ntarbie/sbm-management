@@ -5,7 +5,7 @@ import SeO from '../components/SEO'
 import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
 
-const Page = ({ data }) => {
+const Page = ({ data, transitionStatus, entry, exit }) => {
   if (!data) return null
   const document = data.allPrismicPage.edges[0].node
 
@@ -55,7 +55,6 @@ export const query = graphql`
                 primary {
                   full_width_image {
                     url
-                    thumbnails
                   }
                 }
               }
@@ -69,7 +68,6 @@ export const query = graphql`
                 items {
                   image {
                     url
-                    thumbnails
                     alt
                   }
                   image_description {
@@ -90,7 +88,6 @@ export const query = graphql`
                 primary {
                   featured_image {
                     url
-                    thumbnails
                     alt
                   }
                   title {
@@ -113,9 +110,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    prismicNavigation {
-      ...HeaderQuery
     }
   }
 `

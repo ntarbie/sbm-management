@@ -25,6 +25,7 @@
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0",
     "react-helmet": ">=6.1.0",
+    "react-transition-group": "^2.9.0",
     "tailwindcss": "^2.1.2"
   },
   "devDependencies": {

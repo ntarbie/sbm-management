@@ -1,5 +1,5 @@
 // src/pages/preview.js
-import * as React from 'react'
+// import * as React from 'react'
 import { withPreviewResolver } from 'gatsby-source-prismic'
 import { graphql, useStaticQuery } from 'gatsby'
 import linkResolver from '../utils/linkResolver'

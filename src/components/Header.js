@@ -1,7 +1,8 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
+// import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+// import Link from 'gatsby-plugin-transition-link'
 import sbmBlack from '../images/sbm_black.svg'
 import './nav.css'
 
@@ -14,7 +15,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
   return (
     <header className={`site-header ${homepageClass} w-full`}>
       <div className="container mx-auto max-w-screen-xl flex flex-row items-center">
-      <AniLink cover direction="right" bg='#ffffff' duration={1} to="/">
+      <AniLink cover direction="right" bg='#ffffff' duration={1} duration={1} to="/">
         <img className="h-8" src={sbmBlack} alt='SBM'></img>
        </AniLink>
       <nav className="w-full mx-24"> 
@@ -25,7 +26,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 {/* <Link to={navItem.link.url}>
                   {RichText.asText(navItem.link_label.raw)}
                 </Link> */}
-                <AniLink cover direction="right" bg='#ffffff' duration={1}  to={index === 4 ? "/news" : navItem.link.url} className={"py-6 uppercase font-medium block hover:text-primary transition duration-300 " + (index === 4 ? "/stories" : navItem.link.url)}>
+                <AniLink cover direction="right" bg='#ffffff' duration={1.5}  to={index === 4 ? "/news" : navItem.link.url} className={"py-6 uppercase font-medium block hover:text-primary transition duration-300"}>
                   {RichText.asText(navItem.link_label.raw)}
                 </AniLink>
               </li>

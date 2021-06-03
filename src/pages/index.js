@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-// import Layout from '../components/Layout'
+import Layout from '../components/Layout'
 import SeO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
@@ -8,7 +8,7 @@ import { withPreview } from 'gatsby-source-prismic'
 // import Prismic from '@prismicio/client'
 import NewsGallery from '../components/slices/NewsGallery';
 
-const Homepage = ({data}) => {
+const Homepage = ({data, transitionStatus, entry, exit}) => {
   // const [news, setNews] = useState([])
   // useEffect( () => {
   //   const apiEndpoint = 'https://sbmmanagement.cdn.prismic.io/api/v2'
@@ -27,10 +27,9 @@ const Homepage = ({data}) => {
   //   fetchData();
   // }, []);
 
+  
   if (!data) return null
   const document = data.allPrismicHomepage.edges[0].node.data
-  const news = data.allPrismicNews.edges
-
   const bannerContent = {
     title: document.banner_title,
     description: document.banner_description,
@@ -47,10 +46,9 @@ const Homepage = ({data}) => {
   return (
     // <Layout isHomepage navigation={prismicNavigation}>
     <>
-      <SeO title="Home" description="None" />
+      <SeO title="Home" description="None" body="negative-header"/>
       <HomepageBanner bannerContent={bannerContent} />
-      {news.length > 0 && <NewsGallery news={news}></NewsGallery>}
-      {news.length > 0 && <SliceZone sliceZone={document.body} />}
+      <SliceZone sliceZone={document.body}/>
       </>
     // </Layout>
   )
@@ -78,7 +76,6 @@ export const query = graphql`
             }
             banner_background {
               url
-              thumbnails
               alt
             }
             body {
@@ -104,7 +101,6 @@ export const query = graphql`
                 primary {
                   full_width_image {
                     url
-                    thumbnails
                   }
                 }
               }
@@ -118,7 +114,6 @@ export const query = graphql`
                 items {
                   image {
                     url
-                    thumbnails
                     alt
                   }
                   image_description {
@@ -139,7 +134,6 @@ export const query = graphql`
                 primary {
                   featured_image {
                     url
-                    thumbnails
                     alt
                   }
                   title {
@@ -162,22 +156,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    allPrismicNews(limit: 4) {
-      edges {
-        node {
-          id
-          uid
-          url
-          data {
-            title
-            hero_image
-          }
-        }
-      }
-    }
-    prismicNavigation {
-      ...HeaderQuery
     }
   }
 `

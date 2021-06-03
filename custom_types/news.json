@@ -1,7 +1,22 @@
 {
   "Main": {
     "uid": { "type": "UID", "config": { "label": "UID" } },
-    "hero_image": {},
+    "hero_image": {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ {
+          "name" : "HDx500",
+          "width" : 1920,
+          "height" : 500
+        }, {
+          "name" : "thumb",
+          "width" : 400,
+          "height" : 400
+        } ],
+        "label" : "Hero Image"
+      }
+    },
     "title": {},
     "body": {
       "type": "Slices",

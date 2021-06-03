@@ -2,7 +2,7 @@ import React from 'react'
 import sbmWhite from '../images/sbm_white.svg'
 import { RichText } from 'prismic-reactjs'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 
 const Footer = ({navigation}) => {
@@ -17,7 +17,7 @@ const Footer = ({navigation}) => {
       <div className="flex flex-row items-center justify-center w-full">
         {bottomNav.map((navItem,i) => {
           return (
-              <AniLink paintDrip hex='#f76120' key={`key-${i}`} duration={0.5} to={navItem.link.url} className="py-6 mx-6 uppercase text-white block hover:text-primary transition duration-300">
+              <AniLink cover direction="right" bg='#ffffff' key={`key-${i}`} duration={1} to={i === 4 ? "/news" : navItem.link.url} className="py-6 mx-6 uppercase text-white block hover:text-primary transition duration-300">
                 {RichText.asText(navItem.link_label.raw)}
               </AniLink>
           )
@@ -29,21 +29,21 @@ const Footer = ({navigation}) => {
   </footer>
 )}
 
-export const query = graphql`
-  fragment HeaderQuery on PrismicNavigation {
-    data {
-      top_navigation {
-        link {
-          type
-          uid
-          url
-        }
-        link_label {
-          raw
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   fragment HeaderQuery on PrismicNavigation {
+//     data {
+//       top_navigation {
+//         link {
+//           type
+//           uid
+//           url
+//         }
+//         link_label {
+//           raw
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Footer

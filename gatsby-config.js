@@ -15,28 +15,32 @@ module.exports = {
     `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: "gatsby-plugin-transition-link",
-      // options: {
-      //     layout: require.resolve(`./src/components/Layout.js`)
-      //   }
+      options: {
+          layout: require.resolve(`./src/components/Layout.js`),
+          // injectPageProps: false,
+        }
    },
-   {
-    resolve: `gatsby-plugin-layout`,
-    options: {
-      component: require.resolve(`./src/components/Layout.js`),
-    },
-  },
+  //  {
+  //     resolve: `gatsby-plugin-layout`,
+  //     options: {
+  //       component: require.resolve(`./src/components/Layout.js`),
+  //     },
+  //   },
     {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'sbmmanagement',
         prismicToolbar: true,
         linkResolver: () => linkResolver,
+        shouldDownloadImage: ({ node, key, value }) => {
+          // Return true to download the image or false to skip.
+          return true
+        },
         schemas: {
            homepage: require("./custom_types/homepage.json"),
            navigation: require("./custom_types/navigation.json"),
            page: require("./custom_types/page.json"),
-           news: require("./custom_types/news.json")
-           
+           news: require("./custom_types/news.json"),
         },
       },
     },

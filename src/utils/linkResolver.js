@@ -1,8 +1,13 @@
 const linkResolver = (doc) => {
+  console.log(doc);
+  if (doc.isBroken) {
+    return 'not-found';
+  }
   if (doc.type === 'page' ) {
     return `/${doc.uid}`
-  } else if (doc.type === 'news') {
-    return `/news/${doc.uid}`
+  }
+  if (doc.type === 'news') {
+    return `/article/${doc.uid}`
   } 
   return '/'
 }

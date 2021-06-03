@@ -1,36 +1,62 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Header from './Header'
 import Footer from './Footer'
 import './../styles/reset.css'
 import './../styles/common.css'
 import './../styles/style.css'
+// import { Transition, TransitionGroup } from 'react-transition-group';
+import gatsbyPluginTransitionLink, { TransitionPortal } from "gatsby-plugin-transition-link";
+import gsap from 'gsap';
+
 
 
 
 const Layout = ({ isHomepage, children }) => {
+  const page = useRef(null);
+  useEffect( () => {
+    gsap.to(page.current, {opacity: 1, duration: 1, delay: 1, ease: 'power2.inOut'})
+  });
 
-    
   const data = useStaticQuery(graphql`
   query nav {
-    prismicNavigation {
-      ...HeaderQuery
+    allPrismicNavigation {
+      edges {
+        node {
+          id
+          data {
+            top_navigation {
+              link {
+                type
+                uid
+                url
+              }
+              link_label {
+                raw
+              }
+            }
+          }
+        }
+      }
     }
   }
 `)
   const [activePage, setActivePage] = useState('Home')
-  const layoutProps = {
-    setActivePage: setActivePage
-  };
+  // const layoutProps = {
+  //   setActivePage: setActivePage
+  // };
   // if (!data) return null
-  const prismicNavigation = data.prismicNavigation
+  const prismicNavigation = data.allPrismicNavigation.edges[0].node
   return (
-  <>
+    <>
     <Header active={activePage} setActivePage={setActivePage} isHomepage={isHomepage} navigation={prismicNavigation} />
-    {children}
+      <div className="opacity-0" ref={page}>
+        {children}
+      </div>
+      <TransitionPortal></TransitionPortal>
     <Footer navigation={prismicNavigation} />
-  </>
-)
+    </>
+  )
 }
 
 export default Layout

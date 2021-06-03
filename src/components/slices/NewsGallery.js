@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 // import { Link } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+// import { RichText } from 'prismic-reactjs'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -29,15 +29,13 @@ const ImageGallery = ({ news }) => {
   }, []);
 
   return (
-    <div class="grid grid-rows-1 grid-cols-3 gap-4 max-w-screen-xl mx-auto my-16">
-      {news.map(entry => {
+    <div className="grid grid-rows-1 grid-cols-3 gap-4 max-w-screen-xl mx-auto my-16">
+      {news.map((entry,index) => {
         return (
-          <>
-          <div className="news opacity-0 translate-y-12 transform rounded-lg overflow-hidden" key={entry.uid}>
-            <img alt={`${entry.node.data.title[0].text || null}`} height="400" className="w-full object-cover" src={entry.node.data.hero_image.thumb.url || null}></img>
+          <div className="news opacity-0 translate-y-12 transform rounded-lg overflow-hidden" key={index}>
+            <img alt={`${entry.node.data.title[0].text || null}`} height="400" className="w-full object-cover" src={entry.node.data.hero_image.thumbnails.thumb.url || null}></img>
             <h2>{entry.node.data.title[0].text || null}</h2>
           </div>
-          </>
         )
       })}
       </div>
