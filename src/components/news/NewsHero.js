@@ -55,7 +55,7 @@ export default function NewsHero(props) {
             // onMouseEnter={showDescription} onMouseLeave={hideDescription}
             >
                 {/* <img alt={`${hero.node.data.title[0].text || null}`} height="400" className="absolute top-0 left-0 h-full w-full object-cover z-0" src={hero.node.data.hero_image.thumbnails.HDx500.url || null}></img> */}
-                <GatsbyImage className="absolute top-0 left-0 h-full w-full object-cover z-0" alt={`${hero.node.data.title[0].text || null}`} image={image}></GatsbyImage>
+                <GatsbyImage className="absolute top-0 left-0 h-full w-full object-cover z-0" style={{position: 'absolute'}}alt={`${hero.node.data.title[0].text || null}`} image={image}></GatsbyImage>
                 <h3 className="absolute top-0 left-0 transform translate-y-2 pl-6 bg-primary py-1 pr-8 z-10 text-white m-0 mt-4 font-black tag-clip">Safety</h3>
                 <div className="z-10 card-container p-8 pt-12">
                     <h3 className="text-white">{hero.node.data.title[0].text || null}</h3>
