@@ -35,14 +35,19 @@
   /* TYPOGRAPHY */
   body {
     font-family: "Montserrat", "Gotham", sans-serif;
-    background: #F2EBE4;
+    background: #fcf9f6;
     color: black;
   }
-  
+
   body.dark {
+    color: white;
+    background: theme('colors.dark.bg')
+  }
+  
+  /* body.dark {
     background: #222222;
     color: white;
-  }
+  } */
   
   h1, h2, h3, p {
     color: var(--text-color);
@@ -86,7 +91,7 @@
   }
   
   h3 {
-    @apply uppercase dark:text-white;
+    @apply dark:text-white;
     font-size: var(--h3-size);
     font-weight: var(--h3-weight);
     line-height: var(--h3-leading);
@@ -101,6 +106,25 @@
     line-height: var(--p-leading);
     margin-bottom: 1em;
     margin-top: 0em;
+  }
+
+  p a {
+
+    display: inline-block;
+    background: linear-gradient(theme('colors.primary.DEFAULT'), theme('colors.primary.DEFAULT'));
+    background-size: 100% 2px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    text-decoration-color: theme('colors.primary.DEFAULT');
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: background-size 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  p a:hover, p a:focus {
+    background-size: 100% 100%;
+    color: white;
+    outline: none;
   }
   
   /* Elements */

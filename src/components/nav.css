@@ -5,4 +5,5 @@
 .negative-header header {
     position: absolute;
     z-index: 999;
+    color: white;
 }

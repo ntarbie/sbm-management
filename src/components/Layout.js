@@ -6,7 +6,6 @@ import './../styles/reset.css'
 import './../styles/common.css'
 import './../styles/style.css'
 // import { Transition, TransitionGroup } from 'react-transition-group';
-import gatsbyPluginTransitionLink, { TransitionPortal } from "gatsby-plugin-transition-link";
 import gsap from 'gsap';
 
 
@@ -14,9 +13,9 @@ import gsap from 'gsap';
 
 const Layout = ({ isHomepage, children }) => {
   const page = useRef(null);
-  useEffect( () => {
-    gsap.to(page.current, {opacity: 1, duration: 1, delay: 1, ease: 'power2.inOut'})
-  });
+  // useEffect( () => {
+  //   gsap.to(page.current, {opacity: 1, duration: 1, delay: 1, ease: 'power2.inOut'})
+  // });
 
   const data = useStaticQuery(graphql`
   query nav {
@@ -41,7 +40,6 @@ const Layout = ({ isHomepage, children }) => {
     }
   }
 `)
-  const [activePage, setActivePage] = useState('Home')
   // const layoutProps = {
   //   setActivePage: setActivePage
   // };
@@ -49,11 +47,10 @@ const Layout = ({ isHomepage, children }) => {
   const prismicNavigation = data.allPrismicNavigation.edges[0].node
   return (
     <>
-    <Header active={activePage} setActivePage={setActivePage} isHomepage={isHomepage} navigation={prismicNavigation} />
-      <div className="opacity-0" ref={page}>
+    <Header isHomepage={isHomepage} navigation={prismicNavigation} />
+      <div className="" ref={page}>
         {children}
       </div>
-      <TransitionPortal></TransitionPortal>
     <Footer navigation={prismicNavigation} />
     </>
   )

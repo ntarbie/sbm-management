@@ -4,15 +4,16 @@ import { graphql } from 'gatsby'
 import SeO from '../components/SEO'
 // import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
-import NewsGallery from '../components/slices/NewsGallery';
+import NewsGallery from '../components/news/NewsGallery';
 import NewsHero from '../components/news/NewsHero';
+
 
 const News = ({ data, transitionStatus, entry, exit }) => {
   if (!data) return null
   const news = data.allPrismicNews.edges
   // const document = {type: "page", uid: 'news'}
   const readingLength = data.allPrismicNews.edges[0].node.data.body.filter(n => n.slice_type === "text").map(t => t.primary.content.text).flat()[0].split(" ").length/200;
-  console.log(readingLength);
+  // console.log(readingLength);
 
   return (
     // <Layout isHomepage={false}>
@@ -36,6 +37,11 @@ query news {
           data {
             title
             hero_image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED, transformOptions: {fit: COVER})
+                }
+              }
               thumbnails {
                 HDx500 {
                   url
@@ -46,6 +52,7 @@ query news {
                 thumb {
                   url
                 }
+                
               }
             }
             body {

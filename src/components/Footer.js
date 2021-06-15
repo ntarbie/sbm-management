@@ -1,9 +1,8 @@
 import React from 'react'
 import sbmWhite from '../images/sbm_white.svg'
 import { RichText } from 'prismic-reactjs'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { Link } from 'gatsby'
-
+import TransitionLink from "gatsby-plugin-transition-link"
+import gsap from 'gsap'
 
 const Footer = ({navigation}) => {
   if (!navigation) return null
@@ -13,13 +12,35 @@ const Footer = ({navigation}) => {
   <footer className="bg-primary-footerbg py-24">
     <div className="mx-auto max-w-screen-xl">
       <img alt="SBM Logo" className="h-8 mx-auto mb-16" src={sbmWhite}></img>
-      <hr className="border-t-1 border-white border-opacity-20"></hr>
-      <div className="flex flex-row items-center justify-center w-full">
-        {bottomNav.map((navItem,i) => {
+      <hr className="hidden lg:block border-t-1 border-white border-opacity-20"></hr>
+      <div className="flex flex-col lg:flex-row items-center justify-center w-full">
+        {bottomNav.map((navItem,index) => {
           return (
-              <AniLink cover direction="right" bg='#ffffff' key={`key-${i}`} duration={1} to={i === 4 ? "/news" : navItem.link.url} className="py-6 mx-6 uppercase text-white block hover:text-primary transition duration-300">
-                {RichText.asText(navItem.link_label.raw)}
-              </AniLink>
+              // <AniLink cover direction="right" bg='#ffffff' key={`key-${i}`} duration={1} to={i === 4 ? "/news" : navItem.link.url} className="py-6 mx-6 uppercase text-white block hover:text-primary transition duration-300">
+              //   {RichText.asText(navItem.link_label.raw)}
+              // </AniLink>
+              <TransitionLink 
+                key={index}
+                to={index === 4 ? "/news" : navItem.link.url} 
+                className={"py-6 mx-6 uppercase text-white block hover:text-primary transition duration-300"}
+                exit={{
+                  length: 1,
+                  trigger: ({node, e, exit, entry}) => {
+                    // console.log(node);
+                    gsap.to(node, {opacity: 0, duration: 0.4, ease: 'power2.inOut'});
+                  }
+                }}
+                entry={{
+                  delay: 0.5,
+                  trigger: ({node, e, exit, entry}) => {
+                    // console.log(node);
+                    gsap.from(node, {y: -100, opacity: 0, duration: 0.4, ease: 'power2.inOut'});
+                  }
+                }}
+
+                >
+                  {RichText.asText(navItem.link_label.raw)}
+                </TransitionLink>
           )
         })}
       </div>

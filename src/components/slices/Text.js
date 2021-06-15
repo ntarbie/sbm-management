@@ -8,7 +8,7 @@ const Text = ({ slice }) => {
     : 'text-section-1col'
 
   return (
-    <div className={`p-4 w-full`}>
+    <div className={`px-8 w-full`}>
       <div className={`max-w-screen-md mx-auto`}>
       <RichText
         render={slice.primary.content.raw}

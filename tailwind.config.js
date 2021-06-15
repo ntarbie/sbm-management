@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: false,
     content: ['./src/**/*.html','./src/**/*.js','./src/**/*.css'],
 
   },
@@ -17,15 +17,39 @@ module.exports = {
           bg: '#f1f1f1',
           text: '#03071D',
           footerbg: '#03071D',
+        },
+        dark: {
+          DEFAULT: '#F76120',
+          bg: '#101628',
+          card: '#21283B'
         }
       },
       gridTemplateRows: {
-        'auto-2': 'repeat(2, minmax(0, auto))'
+        'auto-2': 'repeat(2, minmax(0, auto))',
+        'auto-4': 'repeat(4, minmax(0, auto))'
+      },
+      minHeight: {
+        '96': '24rem'
+      },
+      zIndex: {
+        'back': '-1',
+        '25': 25,
+        '50': 50,
+        '75': 75,
+        '80': 80,
+        '90': 90,
+        '100': 100,
+      },
+      translate: {
+        '100': '100%',
+        '-100': '-100%'
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ['dark']
+    },
   },
   plugins: [],
 }

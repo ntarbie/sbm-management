@@ -6,7 +6,6 @@ import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
 // import Prismic from '@prismicio/client'
-import NewsGallery from '../components/slices/NewsGallery';
 
 const Homepage = ({data, transitionStatus, entry, exit}) => {
   // const [news, setNews] = useState([])
@@ -47,7 +46,7 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
     // <Layout isHomepage navigation={prismicNavigation}>
     <>
       <SeO title="Home" description="None" body="negative-header"/>
-      <HomepageBanner bannerContent={bannerContent} />
+      <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
       <SliceZone sliceZone={document.body}/>
       </>
     // </Layout>

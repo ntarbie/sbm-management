@@ -46,9 +46,9 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       <SeO title={capitalizeFirstLetter(document.uid)} body="negative-header"/>
       {/* <img  src={document.data.hero_image.thumbnails.HDx500.url}></img> */}
       
-      <GatsbyImage className="w-full h-96 block" image={image}></GatsbyImage>
-      <div className="bg-white pb-16">
-      <div className="p-4">
+      <GatsbyImage className="w-full h-96 block" alt="" image={image}></GatsbyImage>
+      <div className="bg-white dark:bg-dark-bg pb-16">
+      <div className="p-8">
       <div className="relative max-w-screen-md mx-auto">
         <div ref={social} className="xl:absolute top-0 transform xl:-translate-x-20 flex xl:flex-col">
           <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">F</div>
