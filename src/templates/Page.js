@@ -48,6 +48,12 @@ export const query = graphql`
                   quote {
                     raw
                   }
+                  citation {
+                    raw
+                  }
+                  job_title {
+                    raw
+                  }
                 }
               }
               ... on PrismicPageBodyFullWidthImage {

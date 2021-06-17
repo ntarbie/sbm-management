@@ -24,30 +24,30 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
   }
 
   return (
-    <header className={`site-header ${homepageClass} w-full p-6 px-8`}>
+    <header className={`site-header ${homepageClass} w-full px-6`}>
       <div className="container mx-auto max-w-screen-xl flex flex-row items-center justify-between">
       <TransitionLink 
       exit={{
-        length: 1,
+        length: 0.7,
         trigger: ({node, e, exit, entry}) => {
           // console.log(node);
-          gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'power2.inOut'});
+          gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, ease: 'power2.inOut'});
         }
       }}
       entry={{
-        delay: 0.5,
         trigger: ({node, e, exit, entry}) => {
           // console.log(node);
-          gsap.from(node, {opacity: 0, duration: 0.4, ease: 'power2.inOut'});
+          gsap.from(node, {opacity: 0, duration: 0.15, ease: 'power2.inOut'});
         }
       }}
       to="/">
-        <img className="h-6 lg:h-8 dark:hidden" src={sbmBlack} alt='SBM'></img>
-        <img className="h-6 lg:h-8 hidden dark:block" src={sbmWhite} alt='SBM'></img>
+        <img className="h-6 lg:h-8 dark:hidden dark-logo" src={sbmBlack} alt='SBM'></img>
+        <img className="h-6 lg:h-8 hidden dark:block light-logo" src={sbmWhite} alt='SBM'></img>
        </TransitionLink>
       <nav className="hidden lg:block w-full mx-24"> 
         <ul className="flex-row items-baseline justify-around hidden lg:flex">
           {topNav.map((navItem, index) => {
+
             return (
               <li key={`link-${index}`}>
                 {/* <Link to={navItem.link.url}>
@@ -58,19 +58,20 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 </AniLink> */}
                 <TransitionLink 
                 to={index === 4 ? "/news" : navItem.link.url} 
-                className={"py-6 uppercase font-medium block hover:text-primary transition duration-300"}
+                className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : ''}`}
                 exit={{
-                  length: 1,
+                  length: 0.4,
                   trigger: ({node, e, exit, entry}) => {
                     // console.log(node);
-                    gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'power2.inOut'});
+                    gsap.to(node, {opacity: 0, duration: 0.3, ease: 'power2.inOut'});
                   }
                 }}
                 entry={{
-                  delay: 0.5,
+                  delay: 0.3,
+                  length: 0.4,
                   trigger: ({node, e, exit, entry}) => {
                     // console.log(node);
-                    gsap.from(node, {opacity: 0, duration: 0.4, ease: 'power2.inOut'});
+                    gsap.from(node, {opacity: 0, duration: 0.3, ease: 'power2.inOut'});
                   }
                 }}
 
@@ -83,11 +84,11 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
         </ul>
       </nav>
           <button className="hidden lg:block uppercase text-primary border-primary border-2 rounded-full px-4 py-1 font-bold flex-shrink-0 font-sm transition duration-300 hover:bg-primary hover:text-white">Contact Us</button>
-          <div className="block lg:hidden z-90">
-          <Hamburger color={isOpen ? 'red' : 'white'} direction="right" label="Open Menu" onToggle={toggleNav}/>
+          <div className="block lg:hidden z-90 bg-white">
+          <Hamburger color={isOpen ? 'red' : 'black'} direction="right" label="Open Menu" onToggle={toggleNav}/>
           </div>
           <div ref={mobileNav} className="fixed lg:hidden w-full top-0 left-0 transition duration-300 ease-in-out transform -translate-y-full opacity-0 bg-white dark:bg-dark-bg z-80 p-6">
-            <ul class="text-black dark:text-white w-full">
+            <ul className="text-black dark:text-white w-full">
             {topNav.map((navItem, index) => {
             return (
               <li key={`link-${index}`}>

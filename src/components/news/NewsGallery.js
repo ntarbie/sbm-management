@@ -17,8 +17,8 @@ const ImageGallery = ({ news }) => {
     //   duration: .7,
     //   stagger: 0.3,
     // })
-    ScrollTrigger.batch('.news', {
-      start: "top 75%",
+    ScrollTrigger.batch('div.news', {
+      start: "top 80%",
       onEnter: (elements, triggers) => {
         gsap.to(elements, {opacity: 1, y: 0, stagger: 0.15, ease: 'power2.Out'});
       },

@@ -6,6 +6,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Light.otf') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Book.otf') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-BookIta.otf') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Medium.otf') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Bold.otf') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-BoldIta.otf') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Black.otf') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Ultra.otf') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Book.otf') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Web';
+  src: url('../fonts/gotham/Gotham-Book.otf') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -34,7 +95,7 @@
   
   /* TYPOGRAPHY */
   body {
-    font-family: "Montserrat", "Gotham", sans-serif;
+    font-family: "Gotham-Web", "Montserrat", "Gotham", sans-serif;
     background: #fcf9f6;
     color: black;
   }

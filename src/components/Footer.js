@@ -9,7 +9,7 @@ const Footer = ({navigation}) => {
   const bottomNav = navigation.data.top_navigation
 
   return (
-  <footer className="bg-primary-footerbg py-24">
+  <footer className="bg-primary-footerbg py-24 transition duration-300">
     <div className="mx-auto max-w-screen-xl">
       <img alt="SBM Logo" className="h-8 mx-auto mb-16" src={sbmWhite}></img>
       <hr className="hidden lg:block border-t-1 border-white border-opacity-20"></hr>

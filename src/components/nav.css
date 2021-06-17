@@ -7,3 +7,15 @@
     z-index: 999;
     color: white;
 }
+
+.negative-header .light-logo {
+    display:block !important;
+}
+.negative-header .dark-logo {
+    display:none !important;
+}
+
+ul li a.active {
+    color: theme('colors.primary.DEFAULT');
+    border-top: 2px solid theme('colors.primary.DEFAULT')
+}

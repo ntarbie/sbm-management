@@ -1,0 +1,8 @@
+.quote-slice blockquote::before {
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    content: '“';
+    color: theme('colors.primary.DEFAULT');
+    font-size: 2em;
+}

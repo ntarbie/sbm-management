@@ -6,11 +6,12 @@ import SliceZone from '../components/SliceZone'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
+// import { Transition } from 'react-transition-group';
 
 gsap.registerPlugin(ScrollTrigger)
 
 const News = ({ data, transitionStatus, entry, exit }) => {
-  const img = useRef(null);
+  // const img = useRef(null);
   const tag = useRef(null);
   const title = useRef(null);
   const social = useRef(null);
@@ -43,10 +44,10 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       return (
         // <Layout isHomepage={false} navigation={prismicNavigation}>
     <>
-      <SeO title={capitalizeFirstLetter(document.uid)} body="negative-header"/>
+      <SeO title={capitalizeFirstLetter(document.uid)} body=""/>
       {/* <img  src={document.data.hero_image.thumbnails.HDx500.url}></img> */}
       
-      <GatsbyImage className="w-full h-96 block" alt="" image={image}></GatsbyImage>
+      <GatsbyImage className="w-full h-96 block" style={{display: 'block'}}alt="" image={image}></GatsbyImage>
       <div className="bg-white dark:bg-dark-bg pb-16">
       <div className="p-8">
       <div className="relative max-w-screen-md mx-auto">
@@ -60,7 +61,7 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       <h1 ref={title} className="text-4xl font-normal mt-2">{document.data.title[0].text}</h1>
       </div>
       </div>
-      <div ref={article}>
+      <div id="track" ref={article} className={`transition duration-300 ${transitionStatus === 'entering' ? 'min-h-screen' : 'min-h-12'}`}>
       <SliceZone sliceZone={document.data.body} />
       </div>
       </div>
@@ -114,6 +115,12 @@ query NewsQuery($uid: String) {
               slice_type
               primary {
                 quote {
+                  raw
+                }
+                citation {
+                  raw
+                }
+                job_title {
                   raw
                 }
               }

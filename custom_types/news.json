@@ -56,23 +56,37 @@
             },
             "repeat": {}
           },
-          "quote": {
-            "type": "Slice",
-            "fieldset": "Quote",
-            "description": "A stylized quote",
-            "icon": "format_quote",
-            "display": "list",
-            "non-repeat": {
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "allowTargetBlank": true,
-                  "label": "quote"
+          "quote" : {
+            "type" : "Slice",
+            "fieldset" : "Quote",
+            "description" : "A stylized quote",
+            "icon" : "format_quote",
+            "display" : "list",
+            "non-repeat" : {
+              "quote" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "allowTargetBlank" : true,
+                  "label" : "quote"
+                }
+              },
+              "citation" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "citation"
+                }
+              },
+              "job_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "job_title"
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
           "full_width_image": {
             "type": "Slice",

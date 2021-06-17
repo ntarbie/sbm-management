@@ -5,6 +5,7 @@ import SeO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
+import clientVideo from '../assets/videos/SBM_Clients.mp4'
 // import Prismic from '@prismicio/client'
 
 const Homepage = ({data, transitionStatus, entry, exit}) => {
@@ -48,6 +49,14 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
       <SeO title="Home" description="None" body="negative-header"/>
       <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
       <SliceZone sliceZone={document.body}/>
+      <div className="w-full mt-8">
+        <div className="relative">
+          <div className="px-8 lg:absolute z-20 lg:h-full w-full flex flex-col items-start lg:items-center justify-start" style={{background: 'linear-gradient(#FBF9F6, #FBF9F680 15%, #FBF9F600 30%)'}}>
+            <h2>Our Clients</h2>
+          </div>
+          <video autoPlay muted preLoad="auto" loop className="w-full z-10" src={clientVideo}></video>
+        </div>
+      </div>
       </>
     // </Layout>
   )
@@ -91,6 +100,12 @@ export const query = graphql`
                 slice_type
                 primary {
                   quote {
+                    raw
+                  }
+                  citation {
+                    raw
+                  }
+                  job_title {
                     raw
                   }
                 }
