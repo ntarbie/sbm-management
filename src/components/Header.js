@@ -10,6 +10,8 @@ import gsap from 'gsap';
 import { Slant as Hamburger } from 'hamburger-react'
 
 
+const isBrowser = typeof window !== "undefined"
+
 const Header = ({ isHomepage, navigation, setActivePage, active }) => {
   const [isOpen, setOpen] = useState(false)
   const mobileNav = useRef(null);
@@ -58,7 +60,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 </AniLink> */}
                 <TransitionLink 
                 to={index === 4 ? "/news" : navItem.link.url} 
-                className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : ''}`}
+                className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${isBrowser ? window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : '' : ''}`}
                 exit={{
                   length: 0.4,
                   trigger: ({node, e, exit, entry}) => {
