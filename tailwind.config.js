@@ -28,11 +28,20 @@ module.exports = {
         'auto-2': 'repeat(2, minmax(0, auto))',
         'auto-4': 'repeat(4, minmax(0, auto))'
       },
+      height: {
+        'screen-75': '74vh'
+      },
+
       minHeight: {
         '96': '24rem'
       },
+      maxWidth: {
+        '3/4': '75%',
+        '1ch': '1ch'
+      },
       zIndex: {
         'back': '-1',
+        '0': 0,
         '25': 25,
         '50': 50,
         '75': 75,

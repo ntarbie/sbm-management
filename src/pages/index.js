@@ -6,6 +6,7 @@ import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
 import clientVideo from '../assets/videos/SBM_Clients.mp4'
+import HomeGrid from '../components/homegrid/homegrid'
 // import Prismic from '@prismicio/client'
 
 const Homepage = ({data, transitionStatus, entry, exit}) => {
@@ -48,6 +49,7 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
     <>
       <SeO title="Home" description="None" body="negative-header"/>
       <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
+      <HomeGrid></HomeGrid>
       <SliceZone sliceZone={document.body}/>
       <div className="w-full mt-8">
         <div className="relative">

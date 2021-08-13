@@ -22,25 +22,25 @@ const HomepageBanner = ({ bannerContent, transitionStatus }) => {
         ease: 'ease'
       })
     }
-    if (transitionStatus === 'entered') {
-      gsap.fromTo(heroBanner.current, {
-        height: '100vh',
-      }, {
-        scrollTrigger: {
-          trigger: heroBanner.current,
-          start: '0% 0%',
-          end: '100% 30%',
-          scrub: 0.6,
-          anticipatePin: true,
-        },
-        height: '40vh', 
-      })
-    }
+    // if (transitionStatus === 'entered') {
+    //   gsap.fromTo(heroBanner.current, {
+    //     height: '100vh',
+    //   }, {
+    //     scrollTrigger: {
+    //       trigger: heroBanner.current,
+    //       start: '0% 0%',
+    //       end: '100% 30%',
+    //       scrub: 0.6,
+    //       anticipatePin: true,
+    //     },
+    //     height: '40vh', 
+    //   })
+    // }
   });
 
   return (
   <section
-    className="w-full h-screen flex flex-col items-center justify-center relative" ref={heroBanner}
+    className="w-full h-screen-75 flex flex-col items-center justify-center relative"  ref={heroBanner}
     // style={{
     //   //backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.), rgba(0, 0, 0, 0.6)), url(${bannerContent.background.url})`,
     //   // backgroundImage: `url(${bannerContent.background.url})`,

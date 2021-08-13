@@ -27,7 +27,8 @@
     "react-dom": ">=16.14.0",
     "react-helmet": ">=6.1.0",
     "react-transition-group": "^2.9.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "three": "^0.129.0"
   },
   "devDependencies": {
     "eslint": ">=7.27.0",
