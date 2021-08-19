@@ -17,6 +17,8 @@ module.exports = {
           bg: '#f1f1f1',
           text: '#03071D',
           footerbg: '#03071D',
+          stop1: '#f38b11', 
+          stop2: '#f76120',
         },
         dark: {
           DEFAULT: '#F76120',

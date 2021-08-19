@@ -47,14 +47,18 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
   return (
     // <Layout isHomepage navigation={prismicNavigation}>
     <>
-      <SeO title="Home" description="None" body="negative-header"/>
+      <SeO title="Home" description="None" body="negative-header dark-header"/>
       <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
+        
+        <h2 className="mt-24 text-center font-black text-4xl dark:text-black mt-12 mx-auto">Who we are</h2>
+        <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '80ch'}}>At SBM, we are focused on developing empowered associates, standardized processes, management systems, and reporting tools that make our clients lives easier.</p>
       <HomeGrid></HomeGrid>
       <SliceZone sliceZone={document.body}/>
       <div className="w-full mt-8">
         <div className="relative">
-          <div className="px-8 lg:absolute z-20 lg:h-full w-full flex flex-col items-start lg:items-center justify-start" style={{background: 'linear-gradient(#FBF9F6, #FBF9F680 15%, #FBF9F600 30%)'}}>
-            <h2>Our Clients</h2>
+          <div className="px-8 lg:absolute z-20 lg:h-full w-full flex flex-col items-start lg:items-center justify-start">
+            <h2 className="font-black dark:text-black mt-12">Our Clients</h2>
+            <p className="font-semibold text-center dark:text-black">Our client base includes Life Science, Hi-Tec<br></br>Aerospace and Financial organizations.</p>
           </div>
           <video autoPlay muted preLoad="auto" loop className="w-full z-10" src={clientVideo}></video>
         </div>

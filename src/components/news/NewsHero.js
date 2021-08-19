@@ -59,24 +59,25 @@ export default function NewsHero(props) {
                 <h3 className="absolute top-0 left-0 transform translate-y-2 pl-6 bg-primary py-1 pr-8 z-10 text-white m-0 mt-4 font-black tag-clip">Safety</h3>
                 <div className="z-10 card-container p-8 pt-12">
                     <h3 className="text-white">{hero.node.data.title[0].text || null}</h3>
-                    <div data-height={maxHeight()} className="card-inner opacity-0" ref={contentHeight}>
-                    <p ref={p} className="text-white overflow-hidden">Eight SBM sites in New Jersey received the Governor’s Occupational Safety and Health Award for the calendar year.</p>
+                    {/* <div data-height={maxHeight()} className="card-inner opacity-0" ref={contentHeight}> */}
+                    <div className="card-inner">
+                    <p ref={p} className="text-white ">Eight SBM sites in New Jersey received the Governor’s Occupational Safety and Health Award for the calendar year.</p>
                     <TransitionLink 
                         exit={{
                             length: 1,
                             trigger: ({node, e, exit, entry}) => {
                                 // console.log(node);
-                                gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'power2.inOut'});
+                                gsap.to(node, {opacity: 0, duration: 0.4, ease: 'ease'});
                             }
                             }}
                             entry={{
                             delay: 0.5,
                             trigger: ({node, e, exit, entry}) => {
                                 // console.log(node);
-                                gsap.from(node, {opacity: 0, duration: 0.8, ease: 'power2.inOut'});
+                                gsap.from(node, {opacity: 0, duration: 0.4, ease: 'ease'});
                             }
                             }}
-                    to={hero.node.url} className="text-white">Read Article <span className="text-sm">({readingOutput(props.length)})</span></TransitionLink>
+                    to={hero.node.url} className="text-white">View Article</TransitionLink>
                     </div>
                 </div>
             </div>
@@ -85,21 +86,21 @@ export default function NewsHero(props) {
                 <div className="bg-white dark:bg-dark-card rounded shadow-md flex flex-col p-8" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
                     <h3 className="text-primary font-black mt-0 ">People</h3>
                     <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                    <p className="mb-0 text-base">View Article</p>
                 </div>
                 <div className="bg-white dark:bg-dark-card rounded shadow-md flex flex-col p-8" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
                     <h3 className="text-primary font-black mt-0 ">Quality</h3>
                     <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                    <p className="mb-0 text-base">View Article</p>
                 </div>
                 <div className="bg-white dark:bg-dark-card rounded shadow-md flex flex-col p-8" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
                     <h3 className="text-primary font-black mt-0 ">Procurement</h3>
                     <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p className="mb-0 text-base">Read Article <span className="text-sm opacity-70">3 min read</span></p>
+                    <p className="mb-0 text-base">View Article</p>
                 </div>
-                <div className="bg-primary rounded shadow-md flex flex-col p-8" style={{backgroundImage: `url(${cardbg})`, backgroundSize: 'cover'}}>
+                <div className="bg-gradient-to-r from-primary-stop1 to-primary-stop2 rounded shadow-md flex flex-col p-8">
                     <h3 className="text-white font-black mt-0 ">Stay in touch</h3>
-                    <p className='flex-grow text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className='flex-grow text-white text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div className="relative">
                         <input className="py-1 h-8 px-4 pr-12 rounded-full w-full text-base" type="text" id="email" placeholder="your@email.com"/>
                         <div className="absolute top-0 right-0 h-8 w-8 rounded-full bg-gray-800 flex flex-col items-center justify-center text-white cursor-pointer">→</div>

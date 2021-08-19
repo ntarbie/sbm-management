@@ -44,7 +44,7 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       return (
         // <Layout isHomepage={false} navigation={prismicNavigation}>
     <>
-      <SeO title={capitalizeFirstLetter(document.uid)} body=""/>
+      <SeO title={capitalizeFirstLetter(document.uid)} body="negative-header dark-header"/>
       {/* <img  src={document.data.hero_image.thumbnails.HDx500.url}></img> */}
       
       <GatsbyImage className="w-full h-96 block" style={{display: 'block'}}alt="" image={image}></GatsbyImage>

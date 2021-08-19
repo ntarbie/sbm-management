@@ -37,11 +37,11 @@ const ImageGallery = ({ news }) => {
       <div className="grid grid-rows-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-screen-xl mx-auto my-4">
         {news.map((entry,index) => {
           return (
-            <div className="news opacity-0 translate-y-12 transform rounded-lg overflow-hidden bg-white dark:bg-dark-card shadow-md" key={index}>
+            <div className="news opacity-0 translate-y-12 transform rounded-lg overflow-hidden bg-white dark:bg-dark-card shadow-md flex flex-col" key={index}>
               <img alt={`${entry.node.data.title[0].text || null}`} height="200" className="w-full object-cover h-36" src={entry.node.data.hero_image.thumbnails.thumb.url || null}></img>
-              <div className="p-4">
+              <div className="p-6 flex flex-col flex-grow justify-between">
               <p className="text-sm">{entry.node.data.title[0].text || null}</p>
-              <p className="text-sm mb-0 p-0"><Link to={entry.node.url} className="read-article">Read Article</Link></p>
+              <p className="text-sm mb-0 p-0"><Link to={entry.node.url} className="">View Article</Link></p>
               </div>
             </div>
           )

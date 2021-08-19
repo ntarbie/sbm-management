@@ -1,0 +1,19 @@
+.hero-title em {
+    font-style: normal;
+    color: white;
+    position:relative;
+    display: inline-block;
+    z-index:1;
+}
+
+.hero-title em::after {
+    background: linear-gradient(90deg, #F38B11,#F76120);
+    content: '';
+    height: calc(100% + 10px); 
+    width: calc(100% + 20px);
+    position: absolute;
+    top:-5px;
+    left:-10px; 
+    z-index: -1;
+    transform: skew(-20deg);
+}
