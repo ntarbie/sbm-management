@@ -59,7 +59,7 @@ const HomepageBanner = ({ bannerContent, transitionStatus }) => {
     className="w-full h-screen-75 flex flex-col items-center justify-center relative"  ref={heroBanner}
     style={{
       //backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.), rgba(0, 0, 0, 0.6)), url(${bannerContent.background.url})`,
-      backgroundImage: `url(${bannerContent.background.url})`,
+      backgroundImage: `url(${bannerContent.background.url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
     }}
   > 
     {/* <video ref={heroVideo} autoPlay loop muted src="https://sbmqbrassets.s3.us-west-1.amazonaws.com/videos/pexels-tima-miroshnichenko-6197561.mp4" className="absolute top-0 left-0 h-full w-full object-cover z-back opacity-0"></video> */}
