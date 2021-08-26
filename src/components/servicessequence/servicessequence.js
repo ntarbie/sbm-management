@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const isBrowser = typeof window !== "undefined"
 
 export default function ServicesSequence({images, progress}) {
     var canvas = useRef(null)
@@ -18,9 +19,11 @@ export default function ServicesSequence({images, progress}) {
          }
 
          for (let i = 0; i< frames; i++) {
-            const img = document.createElement('img');
-            img.src = currentFrame(i);
-            seq.push(img);
+            if (isBrowser) {
+                const img = document.createElement('img');
+                img.src = currentFrame(i);
+                seq.push(img);
+            }
         }
         return seq;
     })
