@@ -18,8 +18,8 @@ export default function ServicesSequence({images, progress}) {
          }
 
          for (let i = 0; i< frames; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
+            const img = ({img}) => <img src={currentFrame(i)}/>;
+            // img.src = currentFrame(i);
             seq.push(img);
         }
         return seq;
