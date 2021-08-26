@@ -39,7 +39,8 @@ module.exports = {
       },
       maxWidth: {
         '3/4': '75%',
-        '1ch': '1ch'
+        '1ch': '1ch',
+        '24ch': '24ch'
       },
       zIndex: {
         'back': '-1',

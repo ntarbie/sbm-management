@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 // import AniLink from "gatsby-plugin-transition-link/AniLink"
 import  TransitionLink from 'gatsby-plugin-transition-link'
@@ -28,7 +28,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
   return (
     <header className={`site-header ${homepageClass} w-full px-6`}>
       <div className="container mx-auto max-w-screen-xl flex flex-row items-center justify-between">
-      <TransitionLink 
+      <Link 
       exit={{
         length: 0.4,
         trigger: ({node, e, exit, entry}) => {
@@ -46,7 +46,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
       to="/">
         <img className="h-6 lg:h-8 dark:hidden dark-logo" src={sbmBlack} alt='SBM'></img>
         <img className="h-6 lg:h-8 hidden dark:block light-logo" src={sbmWhite} alt='SBM'></img>
-       </TransitionLink>
+       </Link>
       <nav className="hidden lg:block w-full mx-24"> 
         <ul className="flex-row items-baseline justify-around hidden lg:flex">
           {topNav.map((navItem, index) => {
@@ -59,27 +59,26 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 {/* <AniLink cover direction="right" bg='#ffffff' duration={1.5}  to={index === 4 ? "/news" : navItem.link.url} className={"py-6 uppercase font-medium block hover:text-primary transition duration-300"}>
                   {RichText.asText(navItem.link_label.raw)}
                 </AniLink> */}
-                <TransitionLink 
-                to={index === 1 ? "/news" : navItem.link.url} 
+                <Link 
+                to={index === 1 ? "/news" : index === 0 ? "/capabilities" : navItem.link.url} 
                 className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${isBrowser ? window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : '' : ''}`}
                 exit={{
-                  length: 0.4,
-                  trigger: ({node, e, exit, entry}) => {
+                  trigger: async ({node, e, exit, entry}) => {
                     // console.log(node);
-                    gsap.to(node, {opacity: 0, duration: 0.4, ease: 'power2.inOut'});
+                    await gsap.to(node, {opacity: 0, duration: 1, ease: 'power2.inOut', onComplete: () => { console.log('done'); return true;}});
                   }
                 }}
                 entry={{
-                  delay: 0.4,
-                  trigger: ({node, e, exit, entry}) => {
+                  trigger: async ({node, e, exit, entry}) => {
                     // console.log(node);
+                    await exit;
                     gsap.from(node, {opacity: 0, duration: 0.3, ease: 'power2.inOut'});
                   }
                 }}
 
                 >
                   {RichText.asText(navItem.link_label.raw)}
-                </TransitionLink>
+                </Link>
               </li>
             )
           })}

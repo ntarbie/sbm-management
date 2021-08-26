@@ -1,0 +1,45 @@
+{
+    "Main" : {
+      "capabilities_intro" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Capabilities Intro",
+          "placeholder" : "Service Standardization"
+        }
+      },
+      "capabilities_description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, strong, em",
+          "label" : "Capabilities Description",
+          "placeholder" : "Our systems, processes, and tools allow us to provide planned,  predictable and repeatable results across any space type."
+        }
+      },
+      "industries" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "background" : {
+              "type" : "Image",
+              "config" : {
+                "constraint" : {
+                  "width" : 2500
+                },
+                "thumbnails" : [ ],
+                "label" : "Background"
+              }
+            },
+            "industry_header" : {
+              "type" : "StructuredText",
+              "config" : {
+                "single" : "heading1, heading5, em",
+                "label" : "Industry Header"
+              }
+            }
+          },
+          "label" : "Industries"
+        }
+      }
+    }
+  }

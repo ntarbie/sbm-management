@@ -1,0 +1,61 @@
+.leadership-card {
+    height: 400px;
+    width: 300px;
+    -webkit-backface-visibility: hidden;
+}
+
+.leadership-card img {
+    height: 325px;
+}
+
+#leadership-slider .slick-list {
+    overflow: visible;
+}
+
+#leadership-slider .slick-slide > div {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#leadership-slider .slick-slide {
+    /* opacity: 0; */
+    z-index: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#leadership-slider .slick-active {
+    position:relative;
+    z-index:10;
+}
+
+#leadership-slider .slick-slide.slick-active {
+    opacity: 1;
+}
+
+#leadership-slider .slick-slide.slick-center {
+    position:relative;
+    z-index:100;
+}
+#leadership-slider .slick-slide.slick-center {
+    transform: scale(1.1);
+    z-index:100;
+}
+
+#leadership-slider .slick-slide.slick-center .opacity-0 {
+    transition: opacity 0.3s ease;
+}
+#leadership-slider .slick-slide.slick-center:hover .opacity-0 {
+    opacity:1;
+}
+
+#leadership-slider .slick-slide.slick-clone {
+    transition: opacity 0s linear;
+}
+
+#leadership-slider .slick-prev:before, #leadership-slider .slick-next:before {
+    color: theme('colors.gray.400') 
+}
+
+#leadership-slider button {
+    z-index:1000;
+}

@@ -66,7 +66,7 @@ const HomepageBanner = ({ bannerContent, transitionStatus }) => {
 
     <div className="flex flex-col items-center justify-center p-8">
         <RichText render={bannerContent.title.raw} htmlSerializer={htmlSerializer}/>
-      <p className="text-black text-xl font-bold">
+      <p className="text-black text-xl font-bold text-center">
         {RichText.asText(bannerContent.description.raw)}
       </p>
       {/* <Link to={bannerContent.link.url} className="text-white border-2 border-white py-1 px-4 uppercase font-bold rounded-full mt-4 hover:bg-white hover:text-black transition duration-300">

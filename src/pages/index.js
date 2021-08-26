@@ -7,6 +7,7 @@ import SliceZone from '../components/SliceZone'
 import { withPreview } from 'gatsby-source-prismic'
 import clientVideo from '../assets/videos/SBM_Clients.mp4'
 import HomeGrid from '../components/homegrid/homegrid'
+import Leadership from '../components/slideshows/leadership';
 // import Prismic from '@prismicio/client'
 
 const Homepage = ({data, transitionStatus, entry, exit}) => {
@@ -51,8 +52,22 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
       <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
         
         <h2 className="mt-24 text-center font-black text-4xl dark:text-black mt-12 mx-auto">Who we are</h2>
-        <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '80ch'}}>At SBM, we are focused on developing empowered associates, standardized processes, management systems, and reporting tools that make our clients lives easier.</p>
+        <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '70ch'}}>At SBM, we are focused on developing empowered associates, standardized processes, management systems, and reporting tools that make our clients lives easier.</p>
+      <div className="relative">
+      <div style={{filter: 'blur(50px)', opacity: 0.5}}>
       <HomeGrid></HomeGrid>
+      </div>
+      <p className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-center text-4xl text-red-400 font-extrabold">Content in Development</p>
+      </div>
+      <h2 className="mt-24 text-center font-black text-4xl dark:text-black mt-12 mx-auto">Our Leadership</h2>
+        <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '48ch'}}>A few words from our leaders.</p>
+      <div className="relative overflow-visible">
+    {/* <div className="absolute top-0 left-0 h-full w-full z-100 pointer-events-none py-12"  style={{backgroundImage: 'linear-gradient(90deg, #FBF8F5 10%, transparent 20%, transparent 80%, #FBF8F5 90%)'}}></div> */}
+      <div className="max-w-screen-2xl mx-auto overflow-visible relative z-90">
+      {Leadership()}
+      </div>
+      </div>
+
       <SliceZone sliceZone={document.body}/>
       <div className="w-full mt-8">
         <div className="relative">

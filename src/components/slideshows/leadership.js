@@ -1,0 +1,156 @@
+import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './leadership.css';
+
+
+const leadershipsample = [
+    {
+      "name": "Charles Somers",
+      "title": "CEO / Partner",
+      "image_portrait": "http://sbmmanagement.com/public/images/team/charlessomers2.jpg", 
+      "image_square": "http://sbmmanagement.com/public/images/team/charlessomers1.jpg",
+      "bio" : "As an original founding partner, Charles Somers continues to advance SBM’s development as one of the leading global facilities service providers. As President and CEO since inception, Charles is committed to innovation and developing technology solutions that empower the successful delivery of exceptional service. His responsibilities include customer relations, operational development programs, and financial performance. When he's not overseeing SBM’s strategic direction, Charles enjoys traveling, cycling, and spending time with his family."
+    },
+
+    {
+      "name": "Don Tracy",
+      "title": "Executive VP / Partner",
+      "image_portrait": "http://sbmmanagement.com/public/images/team/dontracy2.jpg",
+      "image_square": "http://sbmmanagement.com/public/images/team/dontracy1.jpg",
+      "bio" : "Don Tracy is one of the original founding partners of SBM. With more than 30 years experience in the building services industry, he spearheaded original national and international expansion efforts through the establishment of proprietary operational transition processes. Don currently supports the organization through strategic involvement with SBM’s procurement team to drive world-class quality and cost objectives for SBM’s customer base. When he's not providing support to SBM and its affiliated organizations, Don enjoys golfing and spending time with his grandkids."
+
+    },
+    {
+      "name": "Ron Alvarado",
+      "title": "Partner",
+      "image_portrait": "http://sbmmanagement.com/public/images/team/ronalvarado2.jpg",
+      "image_square": "http://sbmmanagement.com/public/images/team/ronalvarado1.jpg",
+      "bio" : "With more than 20 years of experience within the facilities and real estate service industry, Ron Alvarado has been instrumental in establishing SBM's reputation as a premiere minority-owned business and actively supports the company's diversity initiatives. He became partner in 1993 and supported the organization as it embarked on national expansion initiatives. An innovative thinker, Ron focuses on collaboration with his two partners to help provide the Senior Leadership Team with strategic oversight and planning. Ron enjoys time traveling with his family, including cozy weekends at the North Central California Coast."
+    },
+    {
+      "name": "Nick McMackins",
+      "title": "President",
+      "image_portrait": "http://sbmmanagement.com/public/images/team/nickmcmackins2.jpg",
+      "image_square": "http://sbmmanagement.com/public/images/team/nickmcmackins1.jpg",
+      "bio" : "As SBM’s President, Nick McMackins charts the course for our organization, collaborating directly with members of our senior leadership team. Often touted for his ability to cultivate cross-departmental alliances, Nick works with each team to ensure organizational preparedness and infrastructure scalability as SBM continues its rapid growth trajectory. During his 12 years with SBM, Nick’s contributions have directly impacted the company’s strategic vision, and his calculated approach has proven successful for SBM’s solutions team, yielding unprecedented organizational expansion across the company. A St. Louis sports superfan and self-professed thrill seeker, one of Nick’s favorite hobbies is skydiving. In fact, he took the plunge even more extreme during a mid-air proposal to his now-wife."
+    },
+      {
+          "name": "Chris Harze",
+          "title": "Chief Financial Officer",
+          "image_portrait": "http://sbmmanagement.com/public/images/team/chrisharze2.jpg",
+          "image_square": "http://sbmmanagement.com/public/images/team/chrisharze1.jpg",
+          "bio" : "Drawing on her more than fifteen years in the finance industry, Carina O’Brien is responsible for forecasting and directing operational budget performance across the organization. She regularly interfaces with finance and operations teams to set and deliver expectations and maintain sustainable metrics for operational and customer service excellence. As a trusted subject matter expert, Carina maintains open communication channels with SBM’s Senior Leadership Team, operations management, and key customer contacts."
+        },
+        {
+          "name": "Carina O'Brien",
+          "title": "Chief Accounting Officer",
+          "image_portrait": "http://sbmmanagement.com/public/images/team/carinaobrien2.jpg",
+          "image_square": "http://sbmmanagement.com/public/images/team/carinaobrien1.jpg",
+          "bio" : "Drawing on her more than fifteen years in the finance industry, Carina O’Brien is responsible for forecasting and directing operational budget performance across the organization. She regularly interfaces with finance and operations teams to set and deliver expectations and maintain sustainable metrics for operational and customer service excellence. As a trusted subject matter expert, Carina maintains open communication channels with SBM’s Senior Leadership Team, operations management, and key customer contacts."
+        },
+          {
+            "name": "Troy Hatcher",
+            "title": "Chief Operating Officer",
+            "image_portrait": "http://sbmmanagement.com/public/images/team/troyhatcher2.jpg", 
+            "image_square": "http://sbmmanagement.com/public/images/team/troyhatcher1.jpg",
+            "bio" : "Troy is the driven leader of operations divisions across SBM. As our organization continues to experience national and global growth opportunities, he is paving the way to ensure standardization across our operational infrastructure. His proven ability to cultivate and support operations excellence ensures our clients always experience exceptional service levels. During his nearly fifteen years with SBM, Troy has served in critical operations roles across the United States, realizing significant growth within the life sciences and high-tech verticals. His commitment to establishing trusted client partnerships and delivering results has yielded customer advocacy and organic expansion."
+          },
+          {
+            "name": "Marcos Salvi",
+            "title": "Chief Marketing Officer",
+            "image_portrait": "http://sbmmanagement.com/public/images/team/marcossalvi2.jpg", 
+            "image_square": "http://sbmmanagement.com/public/images/team/marcossalvi1a.jpg",
+            "bio" : "As a skilled, experienced marketing professional, Marcos Salvi drives and supports creative initiatives throughout the organization. He oversees brand direction and company voice for internal and external audiences and is responsible for leading diverse teams that include training, design, communications, and marketing solutions. Marcos is committed to continually delivering innovative visual design and storytelling techniques, creating compelling content that effectively shares the SBM story. When he’s not at his desk, this former professional hoops star can be found flying the skies as an avid aviation enthusiast and licensed pilot."
+          },
+          {
+              "name": "Joseph Garzia",
+              "title": "Chief Information Officer",
+              "image_portrait": "http://sbmmanagement.com/public/images/team/josephgarzia2.jpg", 
+              "image_square": "http://sbmmanagement.com/public/images/team/josephgarzia1.jpg",
+              "bio" : "As Chief Information Officer, Joe is responsible for designing, developing, and implementing organizational information systems, software applications, and IT support and infrastructure systems across the company.  He also directs SBM toward our primary technological objectives regarding long-term product and profitability goals.  Joe joined SBM with 23 years of experience building and transforming organizations. He has held leadership roles at Plasco ID, Swiss Watch International, The Men’s Warehouse, Winn-Dixie/BI-LO grocery stores, and Chicos FAS.  He obtained his master’s degree in decision and information sciences and bachelor’s degree in business administration from the University of Florida.  When he isn’t working, you can find him golfing, spending time outdoors with his family, or watching movies."
+            },
+          {
+              "name": "Paul Emperador",
+              "title": "EVP, Union Management",
+              "image_portrait": "http://sbmmanagement.com/public/images/team/paulemperador2.jpg", 
+              "image_square": "http://sbmmanagement.com/public/images/team/paulemperador1a.jpg",
+              "bio" : "As a progressive leader, Paul Emperador is committed to supporting an organizational culture founded on creating a great place to work for all team members. His vast human resources knowledge and experience allows him to effectively develop staffing strategies and implement programs to identify talent within and outside the corporation. Paul actively participates in the development of organizational plans focusing on positive employee impact. When he's not carrying out HR duties, Paul can be found playing basketball or cheering on his daughters at their club soccer games."
+            },
+          {
+            "name": "Brian Anderson",
+            "title": "VP, EHS & Risk",
+            "image_portrait": "http://sbmmanagement.com/public/images/team/briananderson2.jpg", 
+            "image_square": "http://sbmmanagement.com/public/images/team/briananderson1.jpg",
+            "bio" : "With 19 years of experience in global Enterprise Risk Management, Environment, Health and Safety (EHS) and Sustainability, Brian Anderson has successfully fostered a proactive safety environment at SBM. Under his direction, SBM has experienced year-over-year safety improvements as well as recognition among America’s Safest Companies according to EHS Today. Brian is no stranger to industry accolades and has been the back-to-back recipient of the Safety Professional of the Year Award by the Industrial Hygiene Practice Specialty (IHPS) of the American Society of Safety Engineers (ASSE). When not reinforcing SBM’s safety culture, Brian takes time to enjoy his hobby of weight lifting."
+          },
+          {
+            "name": "Kim Kerley",
+            "title": "VP, HR",
+            "image_portrait": "http://sbmmanagement.com/public/images/team/kimkerley2.jpg", 
+            "image_square": "http://sbmmanagement.com/public/images/team/kimkerley1.jpg",
+            "bio" : "Kimberly Kerley is the driving force behind our people at SBM. While she supports and grows talent, she also focuses on developing companywide culture, ensuring our organization is a great place to work. Kim, a 20-year veteran of the technology and financial services industry, has built her expertise through several HR and operational leadership positions, including CEO and Principle of a boutique management consulting firm. She received her MBA from the College of William & Mary. Based in Western Pennsylvania, Kim is married with three boys. Currently, a personal goal is making a return to marathon running. She’s also a self-proclaimed “science fiction geek” who prefers Star Trek over Star Wars any day."
+          }
+  ]
+
+export default function Leadership(leadership) {
+    leadership = leadershipsample;
+    console.log(leadership);
+    var settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '40px', 
+        swipeToSlide: true,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [
+            {breakpoint: 1440, 
+            settings: {
+                slidesToShow: 3,
+                centerPadding: '40px',
+            }},
+            {breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                centerPadding: '40px'
+            }}
+        ]
+    };
+
+    return (
+      <div id="leadership-slider" className="my-24">
+        <Slider {...settings}>
+            {leadership.map((l,i) => {
+                return(
+                <div key={i} className="leadership-card bg-white shadow-lg rounded-lg overflow-hidden flex flex-column ">
+                    <div className="relative bg-gradient-to-b from-white via-white to-gray-300 flex-shrink">
+                        <img src={l.image_portrait} alt={l.name} className="w-full object-cover object-top" />
+                        <div className="absolute top-0 left-0 h-full w-full opacity-0">
+                          <div className="relative h-full w-full bg-gradient-to-b from-primary-stop1 to-primary-stop2 z-10 opacity-80"></div>
+                          <div className="absolute top-0 left-0 h-full w-full z-20 flex flex-col items-center justify-center">
+                            <p className="font-semibold text-white text-base block p-6">
+                              {l.bio.slice(0,200)}...
+                            </p>
+                          </div>
+                        </div>
+                    
+                    </div>
+                    <div className="bg-white px-4 py-2">
+                        <p className="text-base m-0 p-0">
+                            {l.name}
+                            </p>
+                            <p className="text-sm m-0 p-0">
+                                {l.title}
+                            </p>
+                    </div>
+                </div>
+                )
+            })}
+        </Slider>
+      </div>
+    )
+}

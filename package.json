@@ -26,7 +26,9 @@
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0",
     "react-helmet": ">=6.1.0",
+    "react-slick": "^0.28.1",
     "react-transition-group": "^2.9.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^2.1.2",
     "three": "^0.129.0"
   },
