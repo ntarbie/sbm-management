@@ -106,7 +106,9 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                   length: 1,
                   trigger: ({node, e, exit, entry}) => {
                     // console.log(node);
-                    gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'power2.inOut'});
+                    gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'power2.inOut', onStart: () => {
+                      toggleNav();
+                    }});
                   }
                 }}
                 entry={{
