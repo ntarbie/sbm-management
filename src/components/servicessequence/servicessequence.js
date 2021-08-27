@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const isBrowser = typeof window !== "undefined"
 
-export default function ServicesSequence({images, progress}) {
+export default function ServicesSequence({progress}) {
     var canvas = useRef(null)
     const [initted, setInit] = useState(false);
     const [imageSeq, setImages] = useState(() => {
@@ -48,7 +48,6 @@ export default function ServicesSequence({images, progress}) {
 
 
 
-        if (imageSeq.length === 0) return;
         context.clearRect(0,0,canvas.current.width,canvas.current.height);
         context.drawImage(imageSeq[sequence.frame],0,canvas.current.height - canvas.current.width*9/16, canvas.current.width, canvas.current.width*9/16)        // if (imageSeq.length > 0) {imageSeq[0].onload = render;}
         // console.log(imageSeq[sequence.frame])
@@ -63,6 +62,6 @@ export default function ServicesSequence({images, progress}) {
     
 
     return (
-        <canvas className="absolute top-0 left-0 h-full w-full z-10 " ref={canvas}></canvas>
+        <canvas id="canvas" className="absolute top-0 left-0 h-full w-full z-10 " ref={canvas}></canvas>
     )
 }

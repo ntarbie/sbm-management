@@ -40,6 +40,7 @@ export default function Sidebar() {
           if (completion.current) {
             completion.current.style.height = self.progress * 100 + "%";
             setProgress(self.progress * 100);
+            console.log(self.progress*100);
           }
         },
       },
@@ -56,13 +57,14 @@ export default function Sidebar() {
 
   return (
     <>
-      <div>
-        <div className="w-64 hidden lg:block" ref={sidebar}>
+    <div className="w-64 hidden lg:block">
+
+        <div className="w-full" ref={sidebar}>
           <p
             className="transform rotate-180 m-0 mb-12"
             style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}>
             {" "}
-            <span className="font-extrabold">01</span> | 04{" "}
+            <span className="font-extrabold">{progress < 15 ? "01" : progress < 49 ? "02" : progress < 83 ? "03" : "04"}</span> | 04{" "}
           </p>
           <div className="flex flex-row h-96 ml-3">
             <div
@@ -73,28 +75,29 @@ export default function Sidebar() {
             <div className="h-full flex flex-col justify-start ml-4">
               <p
                 id="general"
-                className="text-sm uppercase font-black text-gray-200 text-gray-900">
+                className={"text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + (progress < 15 ? "text-gray-900":"")}>
                 General
               </p>
               <p
                 id="critical"
-                className="text-sm uppercase font-black text-gray-200">
+                className={"text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + ((progress >= 15 && progress < 49) ? "text-gray-900":"")}>
                 Critical Environments
               </p>
               <p
                 id="environmental"
-                className="text-sm uppercase font-black text-gray-200">
+                className={"text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + ((progress >= 49 && progress < 83) ? "text-gray-900":"")}>
                 Environmental Services
               </p>
               <p
                 id="exterior"
-                className="text-sm uppercase font-black text-gray-200">
+                className={"text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + ((progress >= 83) ? "text-gray-900":"")}>
                 Exterior Services
               </p>
             </div>
           </div>
         </div>
-      </div>
+    </div>
+
       <div
         ref={container}
         className="w-full overflow-hidden"
@@ -195,9 +198,14 @@ export default function Sidebar() {
               <li className="text-center text-sm">Hardscape maintenance</li>
             </ul>
           </div>
-          {ServicesSequence({ progress: (progress / 100) || 0 })}
+          {ServicesSequence({ progress: ((progress / 100) || 0 )})}
         </div>
       </div>
+      <div className="w-64 hidden lg:block">
+
+<div className="w-full">
+  </div>
+  </div>
     </>
   );
 }

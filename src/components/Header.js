@@ -63,19 +63,19 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 to={index === 1 ? "/news" : index === 0 ? "/capabilities" : navItem.link.url} 
                 className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${isBrowser ? window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : '' : ''}`}
                 exit={{
-                  trigger: async ({node, e, exit, entry}) => {
+                  length: 1,
+                  trigger: ({node, e, exit, entry}) => {
                     // console.log(node);
-                    await gsap.to(node, {opacity: 0, duration: 1, ease: 'power2.inOut', onComplete: () => { console.log('done'); return true;}});
+                    gsap.to(node.children, {y: 100, opacity: 0, duration: 0.4, stagger: -0.1, ease: 'ease'});
                   }
                 }}
                 entry={{
-                  trigger: async ({node, e, exit, entry}) => {
+                  delay: 0.5,
+                  trigger: ({node, e, exit, entry}) => {
                     // console.log(node);
-                    await exit;
-                    gsap.from(node, {opacity: 0, duration: 0.3, ease: 'power2.inOut'});
+                    gsap.from(node, {opacity: 0, duration: 0.4, ease: 'ease'});
                   }
                 }}
-
                 >
                   {RichText.asText(navItem.link_label.raw)}
                 </Link>
@@ -99,7 +99,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                 {/* <AniLink cover direction="right" bg='#ffffff' duration={1.5}  to={index === 4 ? "/news" : navItem.link.url} className={"py-6 uppercase font-medium block hover:text-primary transition duration-300"}>
                   {RichText.asText(navItem.link_label.raw)}
                 </AniLink> */}
-                <TransitionLink 
+                <Link 
                 to={index === 1 ? "/news" : index === 0 ? "/capabilities" : navItem.link.url} 
                 className={"py-2 uppercase font-medium block hover:text-primary transition duration-300 text-center"}
                 exit={{
@@ -121,7 +121,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
 
                 >
                   {RichText.asText(navItem.link_label.raw)}
-                </TransitionLink>
+                </Link>
               </li>
             )
           })}

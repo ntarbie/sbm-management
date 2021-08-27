@@ -3,8 +3,8 @@ const linkResolver = require('./src/utils/linkResolver')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Prismic Tutorial',
-    description: 'Learn how to integrate Prismic into your Gatsby project.',
+    title: 'SBM Management',
+    description: 'Changing the way services are delivered.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
