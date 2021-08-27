@@ -100,7 +100,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                   {RichText.asText(navItem.link_label.raw)}
                 </AniLink> */}
                 <TransitionLink 
-                to={index === 1 ? "/news" : navItem.link.url} 
+                to={index === 1 ? "/news" : index === 0 ? "/capabilities" : navItem.link.url} 
                 className={"py-2 uppercase font-medium block hover:text-primary transition duration-300 text-center"}
                 exit={{
                   length: 1,

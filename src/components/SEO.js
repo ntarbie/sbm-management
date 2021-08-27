@@ -42,7 +42,8 @@ const SEO = ({ description, title, body }) => {
       return (
         <Helmet>
           <title>{metaTitle}</title>
-          <body className={(dark ? 'dark ' : '') + body}></body>
+          {/* <body className={(dark ? 'dark ' : '') + body}></body> */}
+          <body className={body}></body>
           <meta name="description" content={metaDescription} />
         </Helmet>
       )

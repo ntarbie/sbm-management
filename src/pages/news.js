@@ -73,4 +73,5 @@ query news {
 }
 `
 
-export default withPreview(News)
+// export default withPreview(News)
+export default News

@@ -195,4 +195,4 @@ export const query = graphql`
   }
 `
 
-export default withPreview(Homepage)
+export default Homepage

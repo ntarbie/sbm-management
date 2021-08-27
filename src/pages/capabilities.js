@@ -153,4 +153,4 @@ export const query = graphql`
   }
 `;
 
-export default withPreview(Capabilities);
+export default Capabilities
