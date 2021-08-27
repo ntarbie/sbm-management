@@ -64,7 +64,7 @@ export default function Sidebar() {
             className="transform rotate-180 m-0 mb-12"
             style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}>
             {" "}
-            <span className="font-extrabold">{progress < 15 ? "01" : progress < 49 ? "02" : progress < 83 ? "03" : "04"}</span> | 04{" "}
+            <span className="font-extrabold w-4">{progress < 15 ? "01" : progress < 49 ? "02" : progress < 83 ? "03" : "04"}</span> | 04{" "}
           </p>
           <div className="flex flex-row h-96 ml-3">
             <div
