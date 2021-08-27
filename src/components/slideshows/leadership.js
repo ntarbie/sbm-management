@@ -93,7 +93,7 @@ export default function Leadership(leadership) {
     var settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: '40px', 
@@ -115,7 +115,7 @@ export default function Leadership(leadership) {
     };
 
     return (
-      <div id="leadership-slider" className="my-24 mx-auto max-w-screen-mob xl:max-w-screen-lg">
+      <div id="leadership-slider" className="my-24 mx-auto">
         <Slider {...settings}>
             {leadership.map((l,i) => {
                 return(
@@ -123,14 +123,16 @@ export default function Leadership(leadership) {
                     <div className="relative bg-gradient-to-b from-white via-white to-gray-300 flex-shrink">
                         <img src={l.image_portrait} alt={l.name} className="w-full object-cover object-top" />
                         <div className="absolute top-0 left-0 h-full w-full opacity-0">
-                          <div className="relative h-full w-full bg-gradient-to-b from-primary-stop1 to-primary-stop2 z-10 opacity-80"></div>
+                          <div className="relative h-full w-full bg-gradient-to-t from-primary-stop1 to-primary-stop2 z-10 opacity-80"></div>
                           <div className="absolute top-0 left-0 h-full w-full z-20 flex flex-col items-center justify-center">
                             <p className="font-semibold text-white text-base block p-6">
                               {l.bio.slice(0,200)}...
                             </p>
                           </div>
                         </div>
-                    
+                        <div className="absolute bottom-0 right-0 transform -translate-x-6 translate-y-6 z-50 bg-white rounded-full shadow-lg font-extrabold h-12 w-12 flex items-center justify-center">
+                          +
+                        </div>
                     </div>
                     <div className="bg-white px-4 py-2">
                         <p className="text-base m-0 p-0">

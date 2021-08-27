@@ -101,13 +101,7 @@ const Capabilities = ({ data, transitionStatus, entry, exit }) => {
       
 
       <div className="max-w-screen-2xl mx-auto px-4 flex flex-row overflow-hidden">
-        {Sidebar((<div>
-          <h2  id="hello" className="my-96">Test</h2>
-          <h2  id="hello2" className="my-96">Test</h2>
-          <h2 id="hello3" className="my-96">Test</h2>
-          <h2 id="hello4" className="my-96">Test</h2>
-          <h2 id="hello5" className="my-96">Test</h2>
-        </div>))}
+        {Sidebar()}
         
       </div>
       {/* <SliceZone sliceZone={document.body}/> */}

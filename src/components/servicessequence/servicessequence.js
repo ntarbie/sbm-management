@@ -54,10 +54,9 @@ export default function ServicesSequence({images, progress}) {
         // console.log(imageSeq[sequence.frame])
         function render() {
             context.clearRect(0,0,canvas.current.width,canvas.current.height);
-            context.drawImage(imageSeq[sequence.frame],0,canvas.current.height - canvas.current.width*9/16, canvas.current.width, canvas.current.width*9/16)
+            context.drawImage(imageSeq[sequence.frame],0,(canvas.current.height - canvas.current.width*9/16)/2, canvas.current.width, canvas.current.width*9/16)
             // console.log(sequence.frame)
         }
-        
         render();
 
     })

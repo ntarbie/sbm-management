@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 function HomeGrid() {
     useEffect(() => {
         ScrollTrigger.batch('.grid-card', {
-            start: 'top 80%',
+            start: 'top 90%',
             end: 'bottom 200px',
             batchMax: 3,
             onEnter: batch => gsap.to(batch, {opacity: 1, y:0, stagger: 0.1,}),

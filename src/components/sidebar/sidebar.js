@@ -8,7 +8,7 @@ const isBrowser = typeof window !== "undefined";
 gsap.registerPlugin(scrollTrigger);
 let prevProgress = 0;
 
-export default function Sidebar(children) {
+export default function Sidebar() {
   const [tween, setTween] = useState(false);
   const [progress, setProgress] = useState(0);
   const container = useRef(null);
@@ -101,101 +101,101 @@ export default function Sidebar(children) {
         style={{ height: "800vh" }}>
         <div className="relative h-screen w-full flex flex-col items-center justify-start">
           <div className="service-section-1 absolute top-0 mt-8 z-20">
-            <h2 className="font-bold text-primary">General Services</h2>
+            <h2 className="font-bold text-primary text-center">General Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
-              <li>Janitorial</li>
-              <li>MAC: Moves, Adds and Changes services</li>
-              <li>Warehouse management</li>
-              <li>Conference room set-up</li>
-              <li>Patch and paint</li>
-              <li>Electrical/lighting</li>
-              <li>Plumbing</li>
-              <li>Floor and carpet maintenance</li>
-              <li>Special event support</li>
-              <li>Construction support</li>
-              <li>Lock and key</li>
-              <li>Pest control</li>
-              <li>Call center support</li>
-              <li>Signage design and installation</li>
-              <li>Office supply replenishment</li>
-              <li>Mailroom services and delivery</li>
-              <li>Paper shredding service</li>
-              <li>Interior plant maintenance</li>
-              <li>Cork and whiteboard services</li>
-              <li>Ceiling tile replacement</li>
+              <li className="text-center text-sm">Janitorial</li>
+              <li className="text-center text-sm">MAC: Moves, Adds and Changes services</li>
+              <li className="text-center text-sm">Warehouse management</li>
+              <li className="text-center text-sm">Conference room set-up</li>
+              <li className="text-center text-sm">Patch and paint</li>
+              <li className="text-center text-sm">Electrical/lighting</li>
+              <li className="text-center text-sm">Plumbing</li>
+              <li className="text-center text-sm">Floor and carpet maintenance</li>
+              <li className="text-center text-sm">Special event support</li>
+              <li className="text-center text-sm">Construction support</li>
+              <li className="text-center text-sm">Lock and key</li>
+              <li className="text-center text-sm">Pest control</li>
+              <li className="text-center text-sm">Call center support</li>
+              <li className="text-center text-sm">Signage design and installation</li>
+              <li className="text-center text-sm">Office supply replenishment</li>
+              <li className="text-center text-sm">Mailroom services and delivery</li>
+              <li className="text-center text-sm">Paper shredding service</li>
+              <li className="text-center text-sm">Interior plant maintenance</li>
+              <li className="text-center text-sm">Cork and whiteboard services</li>
+              <li className="text-center text-sm">Ceiling tile replacement</li>
             </ul>
           </div>
           <div className="service-section-2 absolute top-0 mt-8 z-20 opacity-0">
-            <h2 className="font-bold text-primary">Critical Environments</h2>
+            <h2 className="font-bold text-primary text-center">Critical Environments</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
-              <li>GMP Cleaning</li>
-              <li>FDA/third-party regulatory compliance</li>
-              <li>Lab Services</li>
-              <li>Glass Wash Services</li>
-              <li>Animal Care Services</li>
-              <li>GMP Maintenance and Repairs</li>
-              <li>Supply Management </li>
-              <li>Emergency spill response</li>
-              <li>Hazardous, medical and radioactive waste removal</li>
-              <li>Environmental monitoring</li>
-              <li>Safety shower/eyewash inspections</li>
-              <li>Dycem mat and Tacky mat maintenance</li>
-              <li>Particle sampling</li>
-              <li>Fab cleaning</li>
-              <li>Interstitial cleaning</li>
-              <li>Class 1-30,000 cleanroom sanitizing</li>
-              <li>Data center services</li>
-              <li>Sub-floor cleaning</li>
-              <li>Raised floor cleaning</li>
-              <li>Protocol services</li>
+              <li className="text-center text-sm">GMP Cleaning</li>
+              <li className="text-center text-sm">FDA/third-party regulatory compliance</li>
+              <li className="text-center text-sm">Lab Services</li>
+              <li className="text-center text-sm">Glass Wash Services</li>
+              <li className="text-center text-sm">Animal Care Services</li>
+              <li className="text-center text-sm">GMP Maintenance and Repairs</li>
+              <li className="text-center text-sm">Supply Management </li>
+              <li className="text-center text-sm">Emergency spill response</li>
+              <li className="text-center text-sm">Hazardous, medical and radioactive waste removal</li>
+              <li className="text-center text-sm">Environmental monitoring</li>
+              <li className="text-center text-sm">Safety shower/eyewash inspections</li>
+              <li className="text-center text-sm">Dycem mat and Tacky mat maintenance</li>
+              <li className="text-center text-sm">Particle sampling</li>
+              <li className="text-center text-sm">Fab cleaning</li>
+              <li className="text-center text-sm">Interstitial cleaning</li>
+              <li className="text-center text-sm">Class 1-30,000 cleanroom sanitizing</li>
+              <li className="text-center text-sm">Data center services</li>
+              <li className="text-center text-sm">Sub-floor cleaning</li>
+              <li className="text-center text-sm">Raised floor cleaning</li>
+              <li className="text-center text-sm">Protocol services</li>
             </ul>
           </div>
           <div className="service-section-3 absolute top-0 mt-8 z-20 opacity-0">
-            <h2 className="font-bold text-primary">Environmental Services</h2>
+            <h2 className="font-bold text-primary text-center">Environmental Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
-              <li>GMP Cleaning</li>
-              <li>FDA/third-party regulatory compliance</li>
-              <li>Lab Services</li>
-              <li>Glass Wash Services</li>
-              <li>Animal Care Services</li>
-              <li>GMP Maintenance and Repairs</li>
-              <li>Supply Management </li>
-              <li>Emergency spill response</li>
-              <li>Hazardous, medical and radioactive waste removal</li>
-              <li>Environmental monitoring</li>
-              <li>Safety shower/eyewash inspections</li>
-              <li>Dycem mat and Tacky mat maintenance</li>
-              <li>Particle sampling</li>
-              <li>Fab cleaning</li>
-              <li>Interstitial cleaning</li>
-              <li>Class 1-30,000 cleanroom sanitizing</li>
-              <li>Data center services</li>
-              <li>Sub-floor cleaning</li>
-              <li>Raised floor cleaning</li>
-              <li>Protocol services</li>
+              <li className="text-center text-sm">GMP Cleaning</li>
+              <li className="text-center text-sm">FDA/third-party regulatory compliance</li>
+              <li className="text-center text-sm">Lab Services</li>
+              <li className="text-center text-sm">Glass Wash Services</li>
+              <li className="text-center text-sm">Animal Care Services</li>
+              <li className="text-center text-sm">GMP Maintenance and Repairs</li>
+              <li className="text-center text-sm">Supply Management </li>
+              <li className="text-center text-sm">Emergency spill response</li>
+              <li className="text-center text-sm">Hazardous, medical and radioactive waste removal</li>
+              <li className="text-center text-sm">Environmental monitoring</li>
+              <li className="text-center text-sm">Safety shower/eyewash inspections</li>
+              <li className="text-center text-sm">Dycem mat and Tacky mat maintenance</li>
+              <li className="text-center text-sm">Particle sampling</li>
+              <li className="text-center text-sm">Fab cleaning</li>
+              <li className="text-center text-sm">Interstitial cleaning</li>
+              <li className="text-center text-sm">Class 1-30,000 cleanroom sanitizing</li>
+              <li className="text-center text-sm">Data center services</li>
+              <li className="text-center text-sm">Sub-floor cleaning</li>
+              <li className="text-center text-sm">Raised floor cleaning</li>
+              <li className="text-center text-sm">Protocol services</li>
             </ul>
           </div>
           <div className="service-section-4 absolute top-0 mt-8 z-20 opacity-0">
-            <h2 className="font-bold text-primary">Exterior Services</h2>
+            <h2 className="font-bold text-primary text-center">Exterior Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
-              <li>Landscape maintenance</li>
-              <li>Snow removal</li>
-              <li>Parking lot sweeping</li>
-              <li>Erosion control</li>
-              <li>Integrated pest management</li>
-              <li>Landscape design</li><li>Construction services</li>
-              <li>GreenScape programs</li>
-              <li>Irrigation systems</li>
-              <li>Stormwater management</li>
-              <li>Wetlands mitigation and remediation</li>
-              <li>Water conservation & management</li>
-              <li>Turf renovation</li>
-              <li>Pruning and clean-up services</li>
-              <li>Total arbor care</li>
-              <li>Hardscape maintenance</li>
+              <li className="text-center text-sm">Landscape maintenance</li>
+              <li className="text-center text-sm">Snow removal</li>
+              <li className="text-center text-sm">Parking lot sweeping</li>
+              <li className="text-center text-sm">Erosion control</li>
+              <li className="text-center text-sm">Integrated pest management</li>
+              <li className="text-center text-sm">Landscape design</li><li className="text-center text-sm">Construction services</li>
+              <li className="text-center text-sm">GreenScape programs</li>
+              <li className="text-center text-sm">Irrigation systems</li>
+              <li className="text-center text-sm">Stormwater management</li>
+              <li className="text-center text-sm">Wetlands mitigation and remediation</li>
+              <li className="text-center text-sm">Water conservation & management</li>
+              <li className="text-center text-sm">Turf renovation</li>
+              <li className="text-center text-sm">Pruning and clean-up services</li>
+              <li className="text-center text-sm">Total arbor care</li>
+              <li className="text-center text-sm">Hardscape maintenance</li>
             </ul>
           </div>
-          {ServicesSequence({ images: [], progress: progress / 100 })}
+          {ServicesSequence({ progress: (progress / 100) || 0 })}
         </div>
       </div>
     </>
