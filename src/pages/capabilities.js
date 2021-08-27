@@ -100,7 +100,7 @@ const Capabilities = ({ data, transitionStatus, entry, exit }) => {
         <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '48ch'}}>{RichText.asText(document.capabilities_description)}</p>
       
 
-      <div className="max-w-screen-2xl mx-auto p-4 mt-12 mb-12 flex flex-row">
+      <div className="max-w-screen-2xl mx-auto px-4 flex flex-row overflow-hidden">
         {Sidebar((<div>
           <h2  id="hello" className="my-96">Test</h2>
           <h2  id="hello2" className="my-96">Test</h2>

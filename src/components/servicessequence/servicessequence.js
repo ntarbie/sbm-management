@@ -30,16 +30,14 @@ export default function ServicesSequence({images, progress}) {
 
     useEffect(() => {
         const context = canvas.current.getContext('2d');
-        canvas.current.height = 1920;
-        canvas.current.width = 1920;
+        canvas.current.height = canvas.current.offsetHeight;
+        canvas.current.width = canvas.current.offsetWidth;
         // const frameCount = 299;
         // function currentFrame(index) {
         //    return `https://sbmwebfeatures.s3.us-west-1.amazonaws.com/sequence/services_${(index + 1).toString().padStart(3, '0')}.jpg`
         // }
-
-        const images = [];
         const sequence = {
-            frame: Math.min(...[Math.floor(394*progress),350])
+            frame: Math.min(...[Math.floor(394*progress),390])
             // frame: 0,
         };
         // for (let i = 0; i< frameCount; i++) {
@@ -48,20 +46,24 @@ export default function ServicesSequence({images, progress}) {
         //     images.push(img);
         // }
 
+
+
         if (imageSeq.length === 0) return;
-        // if (imageSeq.length > 0) {imageSeq[0].onload = render;}
-        console.log(imageSeq[sequence.frame])
+        context.clearRect(0,0,canvas.current.width,canvas.current.height);
+        context.drawImage(imageSeq[sequence.frame],0,canvas.current.height - canvas.current.width*9/16, canvas.current.width, canvas.current.width*9/16)        // if (imageSeq.length > 0) {imageSeq[0].onload = render;}
+        // console.log(imageSeq[sequence.frame])
         function render() {
-            context.clearRect(0,0,1920,1800);
-            context.drawImage(imageSeq[sequence.frame],0,640)
-            console.log(sequence.frame)
+            context.clearRect(0,0,canvas.current.width,canvas.current.height);
+            context.drawImage(imageSeq[sequence.frame],0,canvas.current.height - canvas.current.width*9/16, canvas.current.width, canvas.current.width*9/16)
+            // console.log(sequence.frame)
         }
         
         render();
 
     })
+    
 
     return (
-        <canvas className="absolute top-0 left-0 h-full w-full " ref={canvas}></canvas>
+        <canvas className="absolute top-0 left-0 h-full w-full z-10 " ref={canvas}></canvas>
     )
 }

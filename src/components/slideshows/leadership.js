@@ -84,13 +84,6 @@ const leadershipsample = [
             "image_portrait": "https://sbmwebfeatures.s3.us-west-1.amazonaws.com/assets/briananderson2.jpg", 
             "image_square": "https://sbmwebfeatures.s3.us-west-1.amazonaws.com/assets/briananderson1.jpg",
             "bio" : "With 19 years of experience in global Enterprise Risk Management, Environment, Health and Safety (EHS) and Sustainability, Brian Anderson has successfully fostered a proactive safety environment at SBM. Under his direction, SBM has experienced year-over-year safety improvements as well as recognition among America’s Safest Companies according to EHS Today. Brian is no stranger to industry accolades and has been the back-to-back recipient of the Safety Professional of the Year Award by the Industrial Hygiene Practice Specialty (IHPS) of the American Society of Safety Engineers (ASSE). When not reinforcing SBM’s safety culture, Brian takes time to enjoy his hobby of weight lifting."
-          },
-          {
-            "name": "Kim Kerley",
-            "title": "VP, HR",
-            "image_portrait": "https://sbmwebfeatures.s3.us-west-1.amazonaws.com/assets/kimkerley2.jpg", 
-            "image_square": "https://sbmwebfeatures.s3.us-west-1.amazonaws.com/assets/kimkerley1.jpg",
-            "bio" : "Kimberly Kerley is the driving force behind our people at SBM. While she supports and grows talent, she also focuses on developing companywide culture, ensuring our organization is a great place to work. Kim, a 20-year veteran of the technology and financial services industry, has built her expertise through several HR and operational leadership positions, including CEO and Principle of a boutique management consulting firm. She received her MBA from the College of William & Mary. Based in Western Pennsylvania, Kim is married with three boys. Currently, a personal goal is making a return to marathon running. She’s also a self-proclaimed “science fiction geek” who prefers Star Trek over Star Wars any day."
           }
   ]
 
@@ -100,7 +93,7 @@ export default function Leadership(leadership) {
     var settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: '40px', 
@@ -110,7 +103,7 @@ export default function Leadership(leadership) {
         responsive: [
             {breakpoint: 1440, 
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 1,
                 centerPadding: '40px',
             }},
             {breakpoint: 600,
@@ -122,7 +115,7 @@ export default function Leadership(leadership) {
     };
 
     return (
-      <div id="leadership-slider" className="my-24">
+      <div id="leadership-slider" className="my-24 mx-auto max-w-screen-mob xl:max-w-screen-lg">
         <Slider {...settings}>
             {leadership.map((l,i) => {
                 return(

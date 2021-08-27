@@ -40,7 +40,8 @@ module.exports = {
       maxWidth: {
         '3/4': '75%',
         '1ch': '1ch',
-        '24ch': '24ch'
+        '24ch': '24ch',
+        'screen-mob': '320px',
       },
       zIndex: {
         'back': '-1',
