@@ -15,7 +15,7 @@ export default function ServicesSequence({progress}) {
         let seq = [];
         let frames = 394;
         function currentFrame(index) {
-            return `https://sbmwebfeatures.s3.us-west-1.amazonaws.com/sequence/services_${(index + 1).toString()}.jpg`
+            return `https://sbmwebfeatures.s3.us-west-1.amazonaws.com/sequence2/services_${(index + 1).toString()}.jpg`
          }
 
          for (let i = 0; i< frames; i++) {
@@ -53,7 +53,7 @@ export default function ServicesSequence({progress}) {
         // console.log(imageSeq[sequence.frame])
         function render() {
             context.clearRect(0,0,canvas.current.width,canvas.current.height);
-            context.drawImage(imageSeq[sequence.frame],0,(canvas.current.height - canvas.current.width*9/16)/2, canvas.current.width, canvas.current.width*9/16)
+            context.drawImage(imageSeq[sequence.frame],0,(canvas.current.height - canvas.current.width*9/16)/2*1.5, canvas.current.width, canvas.current.width*9/16)
             // console.log(sequence.frame)
         }
         render();

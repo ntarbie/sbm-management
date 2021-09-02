@@ -8,6 +8,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 // import { Transition } from 'react-transition-group';
 
+
 gsap.registerPlugin(ScrollTrigger)
 
 const News = ({ data, transitionStatus, entry, exit }) => {
@@ -52,10 +53,18 @@ const News = ({ data, transitionStatus, entry, exit }) => {
       <div className="p-8">
       <div className="relative max-w-screen-md mx-auto">
         <div ref={social} className="xl:absolute top-0 transform xl:-translate-x-20 flex xl:flex-col">
-          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">F</div>
-          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">T</div>
-          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">I</div>
-          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">L</div>
+          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">
+          f
+          </div>
+          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">
+t
+          </div>
+          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">
+i
+          </div>
+          <div className="mb-2 mr-2 rounded-full h-12 w-12 bg-blue-300 text-white flex items-center justify-center hover:bg-blue-400 transition duration-300">
+l
+          </div>
         </div>
       <h3 ref={tag} className="text-primary">Special Feature</h3>
       <h1 ref={title} className="text-4xl font-normal mt-2">{document.data.title[0].text}</h1>

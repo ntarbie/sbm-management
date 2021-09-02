@@ -2,6 +2,13 @@ import React, {useEffect} from 'react'
 import Card from './homegridcard.js';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import webmap from './assets/webmap.png';
+import exp from './assets/exp_1.png'
+import quality from './assets/quality_1.png'
+import safe from './assets/safe_1.png'
+import tech from './assets/tech_1.png'
+import train from './assets/train_1.png'
+import orange from './assets/orange_1.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -22,15 +29,30 @@ function HomeGrid() {
     })
     return (
         <div className="p-6">
-        <div className="grid grid-cols-2 md:grid-cols-6 2xl:grid-cols-12 auto-rows-fr grid-flow-row-dense mx-auto max-w-screen-xl gap-5 my-24">
-            <Card classes="col-span-2 md:col-span-6 2xl:col-span-9 row-span-3" image="https://sbmqbrassets.s3.us-west-1.amazonaws.com/img/apple_safety_placeholder.jpg" align="top" heading="This is a card!" bgColor="red" protection="true"></Card>
-            <Card classes="col-span-2 md:col-span-3 row-span-2 md:row-span-4 2xl:row-span-3" bgColor="blue" align="top" heading="This is a card!" protection="false"></Card>
-            {/* <Card classes="col-span-2 md:col-span-3 2xl:col-span-6 row-span-2" bgColor="red" align="top" heading="This is a card!" protection="true"></Card>
-            <Card classes="col-span-1 md:col-span-3 row-span-2" bgColor="blue" align="bottom" heading="This is a card!" protection="false"></Card> */}
-            {/* <Card classes="col-span-1 md:col-span-3 row-span-2" bgColor="red" align="top" heading="This is a card!" protection="true"></Card>
-            <Card classes="col-span-2 md:col-span-3 row-span-2" bgColor="blue" align="bottom" heading="This is a card!" protection="false"></Card>
-            <Card classes="col-span-2 md:col-span-6 row-span-2" bgColor="red" align="top" heading="This is a card!" protection="true"></Card>
-            <Card classes="col-span-2 md:col-span-3 row-span-2" bgColor="blue" align="bottom" heading="This is a card!" protection="false"></Card> */}
+        <div className="grid grid-cols-2 md:grid-cols-6 2xl:grid-cols-12 auto-rows-fr grid-flow-row-dense mx-auto max-w-screen-xl gap-4 my-24">
+            <Card classes="col-span-2 md:col-span-6 lg:col-span-4 2xl:col-span-6 row-span-2" image={webmap} align="top" bgColor="transparent" heading="Our Sites" protection={false}></Card>
+            <Card classes="col-span-2 md:col-span-6 lg:col-span-2 2xl:col-span-3 row-span-2" image={orange} bgColor="white" align="top" heading="Differentiators" protection={false}>
+                <ul className="relative divide-y-2 divide-solid divide-gray-700 divide-opacity-30 z-20">
+                    <li className="py-1 font-medium block">5x Safer</li>
+                    <li className="py-1 font-medium block">10x Lower Turnover</li>
+                    <li className="py-1 font-medium">Quality Excellence</li>
+                    <li className="py-1 font-medium">Best-in-Class Training</li>
+                    <li className="py-1 font-medium">Tier 1 Diversity Credit</li>
+                    <li className="py-1 font-medium">Supply Management</li>
+                    <li className="py-1 font-medium">Seamless Transitions</li>
+                </ul>
+                </Card>
+            <Card classes="col-span-2 md:col-span-3 2xl:col-span-3 row-span-1" image={quality} bgColor="white" align="top" heading="Quality" protection={false}></Card>
+            <Card classes="col-span-2 md:col-span-3 2xl:col-span-3 row-span-1" image={safe} bgColor="white" align="top" heading="Safety" protection={false}></Card>
+            <Card classes="col-span-2 md:col-span-3 row-span-1" bgColor="white" image={tech} align="top" heading="Technology" protection={false}></Card>
+            <Card classes="col-span-2 md:col-span-3 row-span-1" bgColor="white" image={train} align="top" heading="Training" protection={false}></Card>
+            <Card classes="col-span-2 md:col-span-6 row-span-1" bgColor="white" image={exp} align="top" heading="Employee Experience" protection={false}>
+            <ul className="relative divide-y-2 divide-solid divide-gray-700 divide-opacity-30 z-20">
+                    <li className="py-1 font-medium block">Onboarding</li>
+                    <li className="py-1 font-medium block">Absenteeism</li>
+                    <li className="py-1 font-medium">Retention</li>
+                </ul>
+            </Card>
         </div>
         </div>
         

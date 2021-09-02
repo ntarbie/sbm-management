@@ -48,9 +48,9 @@ const Layout = ({ isHomepage, children }) => {
   return (
     <>
     <Header isHomepage={isHomepage} navigation={prismicNavigation} />
-      <div className="" ref={page}>
+      <main className="" ref={page}>
         {children}
-      </div>
+      </main>
     <Footer navigation={prismicNavigation} />
     </>
   )

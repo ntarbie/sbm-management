@@ -33,13 +33,13 @@
 @font-face {
   font-family: 'Gotham-Web';
   src: url('../fonts/gotham/Gotham-Bold.otf') format('woff');
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gotham-Web';
   src: url('../fonts/gotham/Gotham-BoldIta.otf') format('woff');
-  font-weight: 500;
+  font-weight: 600;
   font-style: italic;
 }
 @font-face {
@@ -190,4 +190,14 @@
   
   /* Elements */
 
-  
+  header.absolute {
+    z-index: 999;
+  }
+
+main {
+    padding-top: 50px;
+  }
+
+  .negative-header main {
+    padding-top: 0px;
+  }

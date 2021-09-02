@@ -1,12 +1,6 @@
-import React, {useRef} from 'react';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import LeaderCard from "./leader-card";
+import React, { useState, useEffect } from "react";
 import './leadership.css';
-import LeaderCard from './leader-card';
-import gsap from 'gsap/gsap-core';
-
-
 
 const leadershipsample = [
     {
@@ -90,80 +84,14 @@ const leadershipsample = [
           }
   ]
 
-export default function Leadership(leadership) {
-  var slider = useRef(null);
-  var slidecontainer = useRef(null)
-    leadership = leadershipsample;
-    var settings = {
-        dots: false,
-        infinite: true,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        centerMode: true,
-        arrows: true,
-        swipe: false,
-        beforeChange: async (current, next) => {
-          // console.log(current,next)
-          // console.log(slider.current) 
-          if (slider.current.state.breakpoint !== null) return;
-          var reset = (Math.abs(current - next) > 1 ? true : false);
-          // console.log(reset);
-          let slides = [...slidecontainer.current.querySelectorAll(`[data-index]`)];
-          let center = [...slidecontainer.current.querySelectorAll('.slick-center')][0];
-          let index = next + 7;
-          let start = ((current - next > 1 && current - next !== (slider.current.props.children.length - 1)) ? 2 : 3)
-          let end = ((current - next > 1) ? 3 : 2)
-          // console.log(index, start);
-          let selection = slides.splice(index-start,5);
-          let fadeIn = selection.splice((start === 2 ? 0 : selection.length - 1), 1);
-          // gsap.to(selection, {opacity: 1, duration: 0});
-          // console.log(fadeIn, selection);
-          const timeline = gsap.timeline({onComplete: () => { setTimeout(function() {return true}, 100)}})
-          await timeline.set(selection, {opacity: 1})
-            .to(fadeIn, {opacity: 1, ease: 'ease', duration: 0.3})
-          // if (next > current) {
-          //   let lost = [...slidecontainer.current.querySelectorAll(`[data-index="${next - 3}"]`)][0];
-          //   let found = [...slidecontainer.current.querySelectorAll(`[data-index="${next + 2}"]`)][0];
-          //   gsap.fromTo(lost, {opacity: 1}, {opacity: 0, duration: 0.5, ease: 'ease'})
-          //   gsap.fromTo(found, {opacity: 0}, {opacity: 1, duration: 0.5, ease: 'ease'})
-          // } else if (next < current) {
-          //   let lost = [...slidecontainer.current.querySelectorAll(`[data-index="${next + 3}"]`)][0];
-          //   let found = [...slidecontainer.current.querySelectorAll(`[data-index="${next - 2}"]`)][0];
-          //   gsap.fromTo(lost, {opacity: 1}, {opacity: 0, duration: 0.2, ease: 'ease'})
-          //   gsap.fromTo(found, {opacity: 0}, {opacity: 1, duration: 0.2, ease: 'ease'})
-          // }
-        },
-        afterChange: async (next) => {
-          if (slider.current.state.breakpoint !== null) return;
-          let slides = [...slidecontainer.current.querySelectorAll(`div.slick-slide:not(.slick-active)`)];
-          let active = [...slidecontainer.current.querySelectorAll(`div.slick-slide.slick-active`)];
-          await gsap.to(slides, {opacity: 0, duration: 0.3, delay: 0.1, onComplete: () => {return true }})
-          await gsap.to(active, {opacity: 1, duration: 0.3, delay: 0.1, ease: 'ease'})
-        },
-        responsive: [
-            {breakpoint: 1440, 
-            settings: {
-                slidesToShow: 3,
-                centerPadding: '80px',
-                arrows: true,
-                swipe: false,
-            }},
-            {breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                centerPadding: '100px',
-                swipe: true,
-            }}
-        ]
-    };
+export default function LeadershipSlides(leaders) {
+    const [activeLeaders, setActiveLeaders ] = useState(leadershipsample.slice(0,5));
 
     return (
-      <div id="leadership-slider" className="my-24 mx-auto" ref={slidecontainer}>
-        <Slider {...settings} ref={slider}>
-            {leadership.map((l,i) => {
-                return LeaderCard(l,i)
-            })}
-        </Slider>
-      </div>
+    <div id="leadership-slider" className="flex flex-row items-center justify-center">
+        {activeLeaders.map((l,i) => {
+        return LeaderCard(l,i)
+    })}
+    </div>    
     )
 }

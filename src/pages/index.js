@@ -8,6 +8,7 @@ import { withPreview } from 'gatsby-source-prismic'
 import clientVideo from '../assets/videos/SBM_Clients.mp4'
 import HomeGrid from '../components/homegrid/homegrid'
 import Leadership from '../components/slideshows/leadership';
+import LeadershipSlides from '../components/slideshows/leadership2'
 // import Prismic from '@prismicio/client'
 
 const Homepage = ({data, transitionStatus, entry, exit}) => {
@@ -39,7 +40,7 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
     linkLabel: document.banner_link_label,
     background: document.banner_background,
   }
-
+ 
   // const prismicNavigation = data.prismicNavigation
 
   //Client Data
@@ -50,15 +51,14 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
     <>
       <SeO title="Home" description="None" body="negative-header dark-header"/>
       <HomepageBanner bannerContent={bannerContent} transitionStatus={transitionStatus} />
-        
+        <div className="bg-gradient-to-b from-white to-gray-100 p-2">
         <h2 className="mt-24 text-center font-black text-4xl dark:text-black mt-12 mx-auto">Who we are</h2>
         <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '70ch'}}>At SBM, we are focused on developing empowered associates, standardized processes, management systems, and reporting tools that make our clients lives easier.</p>
       <div className="relative">
-      <div style={{filter: 'blur(50px)', opacity: 0.5}}>
       <HomeGrid></HomeGrid>
       </div>
-      <p className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-center text-4xl text-red-400 font-extrabold">Content in Development</p>
-      </div>
+        </div>
+      <div className="bg-white p-2">
       <h2 className="mt-24 text-center font-black text-4xl dark:text-black mt-12 mx-auto">Our Leadership</h2>
         <p className="text-2xl text-center dark:text-black mx-auto" style={{maxWidth: '48ch'}}>A few words from our leaders.</p>
       <div className="relative overflow-visible">
@@ -67,15 +67,16 @@ const Homepage = ({data, transitionStatus, entry, exit}) => {
       {Leadership()}
       </div>
       </div>
+      </div>
 
       <SliceZone sliceZone={document.body}/>
-      <div className="w-full mt-8">
+      <div className="w-full">
         <div className="relative">
           <div className="px-8 lg:absolute z-20 lg:h-full w-full flex flex-col items-start lg:items-center justify-start">
             <h2 className="font-black dark:text-black mt-12">Our Clients</h2>
             <p className="font-semibold text-center dark:text-black">Our client base includes Life Science, Hi-Tec<br></br>Aerospace and Financial organizations.</p>
           </div>
-          <video autoPlay muted preLoad="auto" loop className="w-full z-10" src={clientVideo}></video>
+          <video autoPlay playsInline muted preload="auto" loop className="w-full z-10" src={clientVideo}></video>
         </div>
       </div>
       </>

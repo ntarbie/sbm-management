@@ -3,6 +3,9 @@
   "description": "A simple tutorial to get started with Prismic & Gatsby.js",
   "version": "0.1.0",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@prismicio/client": "^5.0.0",
     "autoprefixer": "^10.2.6",
     "gatsby": ">=3.5.1",

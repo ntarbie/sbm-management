@@ -25,7 +25,6 @@ export default function Sidebar() {
         start: "top 20%",
         endTrigger: container.current,
         end: "bottom bottom",
-        // markers: true
       },
     });
     let tl = gsap.timeline({
@@ -33,14 +32,15 @@ export default function Sidebar() {
         trigger: container.current,
         start: "top top",
         end: "bottom bottom",
-        anticipatePin: 1,
         pin: true,
-        scrub: 1,
+        anticipatePin: 1,
+        scrub: true,
+        // markers: true,
         onUpdate: self => {
           if (completion.current) {
             completion.current.style.height = self.progress * 100 + "%";
             setProgress(self.progress * 100);
-            console.log(self.progress*100);
+            // console.log(self.progress*100);
           }
         },
       },
@@ -103,8 +103,8 @@ export default function Sidebar() {
         className="w-full overflow-hidden"
         style={{ height: "800vh" }}>
         <div className="relative h-screen w-full flex flex-col items-center justify-start">
-          <div className="service-section-1 absolute top-0 mt-8 z-20">
-            <h2 className="font-bold text-primary text-center">General Services</h2>
+          <div className="service-section-1 absolute top-0 z-20">
+            <h2 id="start" className="font-bold text-primary text-center">General Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
               <li className="text-center text-sm">Janitorial</li>
               <li className="text-center text-sm">MAC: Moves, Adds and Changes services</li>
@@ -128,7 +128,7 @@ export default function Sidebar() {
               <li className="text-center text-sm">Ceiling tile replacement</li>
             </ul>
           </div>
-          <div className="service-section-2 absolute top-0 mt-8 z-20 opacity-0">
+          <div className="service-section-2 absolute top-0 z-20 opacity-0">
             <h2 className="font-bold text-primary text-center">Critical Environments</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
               <li className="text-center text-sm">GMP Cleaning</li>
@@ -153,7 +153,7 @@ export default function Sidebar() {
               <li className="text-center text-sm">Protocol services</li>
             </ul>
           </div>
-          <div className="service-section-3 absolute top-0 mt-8 z-20 opacity-0">
+          <div className="service-section-3 absolute top-0 z-20 opacity-0">
             <h2 className="font-bold text-primary text-center">Environmental Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
               <li className="text-center text-sm">GMP Cleaning</li>
@@ -178,7 +178,7 @@ export default function Sidebar() {
               <li className="text-center text-sm">Protocol services</li>
             </ul>
           </div>
-          <div className="service-section-4 absolute top-0 mt-8 z-20 opacity-0">
+          <div className="service-section-4 absolute top-0 z-20 opacity-0">
             <h2 className="font-bold text-primary text-center">Exterior Services</h2>
             <ul className="grid grid-cols-1 gap-x-4 lg:grid-cols-1">
               <li className="text-center text-sm">Landscape maintenance</li>

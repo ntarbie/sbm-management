@@ -81,10 +81,12 @@ const Capabilities = ({ data, transitionStatus, entry, exit }) => {
           backgroundImage: `url(${document.industries[0].background.url})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          backgroundPosition: 'center center',
+          backgroundColor: '#837B72',
         }}>
-        {/* <video ref={heroVideo} autoPlay loop muted src="https://sbmqbrassets.s3.us-west-1.amazonaws.com/videos/pexels-tima-miroshnichenko-6197561.mp4" className="absolute top-0 left-0 h-full w-full object-cover z-back opacity-0"></video> */}
+        {document.industries[0].video?.url && <video autoPlay playsInline loop muted src={document.industries[0].video.url} className="absolute top-0 left-0 h-full w-full object-cover z-10"></video>}
 
-        <div className="flex flex-col items-center justify-center p-8">
+        <div className="relative flex flex-col items-center justify-center p-8 z-20">
 
           <RichText
             render={document.industries[0].industry_header}
@@ -138,6 +140,9 @@ export const query = graphql`
                 }
                 text
                 type
+              }
+              video {
+                url
               }
             }
           }
