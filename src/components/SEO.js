@@ -6,7 +6,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const isBrowser = typeof window !== "undefined"
 
-
 const SEO = ({ description, title, body }) => {
   let [now] = useState(new Date().getHours());
   let [mode, setMode] = useState(null);
@@ -27,8 +26,7 @@ const SEO = ({ description, title, body }) => {
   if ((now <= 6 || now >= 18) && !dark) {
     setDark(true)
   }
-  
-  
+
   return(
   <StaticQuery
     query={`${SeoQuery}`}
@@ -37,7 +35,6 @@ const SEO = ({ description, title, body }) => {
         ? `${title} | ${data.site.siteMetadata.title}`
         : data.site.siteMetadata.title
       const metaDescription = description || data.site.siteMetadata.description
-
 
       return (
         <Helmet>

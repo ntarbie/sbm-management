@@ -9,6 +9,14 @@ import safe from './assets/safe_1.png'
 import tech from './assets/tech_1.png'
 import train from './assets/train_1.png'
 import orange from './assets/orange_1.png'
+import icSafe from '../../assets/icons/main_safety.svg'
+import icClip from '../../assets/icons/main_clip_check.svg'
+import icOnboarding from '../../assets/icons/main_onboarding.svg'
+import icQuality from '../../assets/icons/main_quality.svg'
+import icRetention from '../../assets/icons/main_retention.svg'
+import icBrief from '../../assets/icons/main_brief.svg'
+import icTraining from '../../assets/icons/main_training.svg'
+import icTurnover from '../../assets/icons/main_turnover.svg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,13 +41,13 @@ function HomeGrid() {
             <Card classes="col-span-2 md:col-span-6 lg:col-span-4 2xl:col-span-6 row-span-2" image={webmap} align="top" bgColor="transparent" heading="Our Sites" protection={false}></Card>
             <Card classes="col-span-2 md:col-span-6 lg:col-span-2 2xl:col-span-3 row-span-2" image={orange} bgColor="white" align="top" heading="Differentiators" protection={false}>
                 <ul className="relative divide-y-2 divide-solid divide-gray-700 divide-opacity-30 z-20">
-                    <li className="py-1 font-medium block">5x Safer</li>
-                    <li className="py-1 font-medium block">10x Lower Turnover</li>
-                    <li className="py-1 font-medium">Quality Excellence</li>
-                    <li className="py-1 font-medium">Best-in-Class Training</li>
-                    <li className="py-1 font-medium">Tier 1 Diversity Credit</li>
-                    <li className="py-1 font-medium">Supply Management</li>
-                    <li className="py-1 font-medium">Seamless Transitions</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icSafe} className="h-4 w-4 object-fit inline-block mr-2"/>5x Safer</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icTurnover} className="h-4 w-4 object-fit inline-block mr-2"/>10x Lower Turnover</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icQuality} className="h-4 w-4 object-fit inline-block mr-2"/>Quality Excellence</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icTraining} className="h-4 w-4 object-fit inline-block mr-2"/>Best-in-Class Training</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icClip} className="h-4 w-4 object-fit inline-block mr-2"/>Tier 1 Diversity Credit</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icBrief} className="h-4 w-4 object-fit inline-block mr-2"/>Supply Management</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icClip} className="h-4 w-4 object-fit inline-block mr-2"/>Seamless Transitions</li>
                 </ul>
                 </Card>
             <Card classes="col-span-2 md:col-span-3 2xl:col-span-3 row-span-1" image={quality} bgColor="white" align="top" heading="Quality" protection={false}></Card>
@@ -48,9 +56,9 @@ function HomeGrid() {
             <Card classes="col-span-2 md:col-span-3 row-span-1" bgColor="white" image={train} align="top" heading="Training" protection={false}></Card>
             <Card classes="col-span-2 md:col-span-6 row-span-1" bgColor="white" image={exp} align="top" heading="Employee Experience" protection={false}>
             <ul className="relative divide-y-2 divide-solid divide-gray-700 divide-opacity-30 z-20">
-                    <li className="py-1 font-medium block">Onboarding</li>
-                    <li className="py-1 font-medium block">Absenteeism</li>
-                    <li className="py-1 font-medium">Retention</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icOnboarding} className="h-4 w-4 object-fit inline-block mr-2"/>Onboarding</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icClip} className="h-4 w-4 object-fit inline-block mr-2"/>Absenteeism</li>
+                    <li className="py-1 font-medium flex flex-row items-center"><img src={icRetention} className="h-4 w-4 object-fit inline-block mr-2"/>Retention</li>
                 </ul>
             </Card>
         </div>

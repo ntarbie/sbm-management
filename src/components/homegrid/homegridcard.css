@@ -1,9 +1,21 @@
 .grid-card img{
-    display:block;
+    /* display:block; */
     transition: transform 0.3s ease;
     -webkit-backface-visibility: hidden;
 }
 
-.grid-card:hover img {
+.grid-card:hover img.grow {
     transform: scale(1.05);
+}
+
+.grid-card h3 {
+    position: relative;
+}
+
+.grid-card h3::before {
+    content: "|";
+    position: absolute;
+    left: 0.5em;
+    font-weight:600;
+    color: theme('colors.primary.DEFAULT')
 }

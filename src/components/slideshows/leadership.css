@@ -17,7 +17,7 @@
     margin: 0 5px;
 }
 
-#leadership-slider .slick-slide.slick-active {
+#leadership-slider .slick-slide {
     /* opacity: 0; */
     z-index: 1;
 }
@@ -55,7 +55,7 @@
     z-index:100;
 }
 #leadership-slider .slick-slide {
-    transition: transform 0.15s ease;
+    transition: transform 0.15s ease, opacity 0.3s ease;
 }
 
 #leadership-slider .slick-slide.slick-center {
