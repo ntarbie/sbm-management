@@ -3,12 +3,15 @@ import SeO from "../components/SEO";
 import { withPreview } from "gatsby-source-prismic";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/all";
 import joinusbg from "../images/joinusbg.png";
 import people from "../images/people.png";
 import corp1 from "../images/corp1_1.png";
 import collage from "../images/collage.png";
 
+
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 const JoinUs = ({ data, transitionStatus, entry, exit }) => {
   let sidebar = useRef(null);
@@ -43,6 +46,10 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
         })
     setTweening(true);
   });
+
+  function scrollTo(num) {
+    gsap.to(window, {duration: 0.5, scrollTo: '#l' + num})
+  }
 
   return (
     <>
@@ -102,22 +109,28 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
                   <p
                     id="general"
                     className={
-                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + (item === "01" ? 'text-gray-900' : '')
-                    }>
+                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 cursor-pointer " + (item === "01" ? 'text-gray-900' : '')
+                    }
+                    onClick={() => scrollTo('01')}
+                    >
                     Corporate Jobs
                   </p>
                   <p
                     id="critical"
                     className={
-                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + (item === "02" ? 'text-gray-900' : '')
-                    }>
+                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 cursor-pointer " + (item === "02" ? 'text-gray-900' : '')
+                    }
+                    onClick={() => scrollTo('02')}
+                    >
                     Design & Engineering
                   </p>
                   <p
                     id="environmental"
                     className={
-                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 " + (item === "03" ? 'text-gray-900' : '')
-                    }>
+                      "text-sm uppercase font-black text-gray-400 transition-colors duration-300 cursor-pointer " + (item === "03" ? 'text-gray-900' : '')
+                    }
+                    onClick={() => scrollTo('03')}
+                    >
                     Operations{" "}
                   </p>
                 </div>
@@ -126,7 +139,7 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
           </div>
 
           <div id="container" ref={container}>
-            <h2 className="font-black text-4xl dark:text-white ">
+            <h2 id="l01" className="font-black text-4xl dark:text-white ">
               Corporate Jobs
             </h2>
             <img
@@ -178,7 +191,7 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
               </div>
             </div>
 
-            <h2 className="font-black text-4xl dark:text-white ">
+            <h2 id="l02" className="font-black text-4xl dark:text-white ">
               Design & Engineering
             </h2>
             <img
@@ -230,7 +243,7 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
               </div>
             </div>
 
-            <h2 className="font-black text-4xl dark:text-white ">Operations</h2>
+            <h2 id="l03" className="font-black text-4xl dark:text-white ">Operations</h2>
             <img
               className="w-full h-96 object-cover rounded shadow-lg my-12 my-24"
               src={corp1}
