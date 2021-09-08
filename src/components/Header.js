@@ -60,7 +60,7 @@ const Header = ({ isHomepage, navigation, setActivePage, active }) => {
                   {RichText.asText(navItem.link_label.raw)}
                 </AniLink> */}
                 <TransitionLink 
-                to={index === 1 ? "/news" : index === 0 ? "/capabilities" : navItem.link.url} 
+                to={index === 2 ? "/news" : index === 0 ? "/capabilities" : '/joinus'} 
                 className={`py-6 uppercase font-medium block hover:text-primary transition duration-300 ${isBrowser ? window.location.pathname === (index === 4 ? "/news" : navItem.link.url) ? 'active' : '' : ''}`}
                 exit={{
                   length: 1,

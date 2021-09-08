@@ -77,3 +77,25 @@
 #leadership-slider button {
     z-index:1000;
 }
+
+#leadership-slider .slick-disabled {
+    opacity:0; 
+    cursor: default;
+}
+
+#leadership-slider .slick-arrow {
+    height: 40px;
+    width: 40px;
+}
+
+#leadership-slider .slick-arrow::before {
+    font-size: 40px;
+}
+
+#leadership-slider .slick-next {
+    right: -75px;
+}
+
+#leadership-slider .slick-prev {
+    left: -75px;
+}

@@ -129,12 +129,16 @@ export default function Leadership(leadership) {
             settings: {
                 slidesToShow: 3,
                 centerPadding: '80px',
+                centerMode: true,
+                infinite: true,
                 arrows: true,
-                swipe: false,
+                swipe: true,
             }},
             {breakpoint: 600,
             settings: {
                 slidesToShow: 1,
+                centerMode: true,
+                infinite: true,
                 centerPadding: '100px',
                 swipe: true,
             }}

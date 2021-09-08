@@ -31,6 +31,8 @@ module.exports = {
         'auto-4': 'repeat(4, minmax(0, auto))'
       },
       height: {
+        'screen-50': '50vh',
+        'screen-2/3': '66vh',
         'screen-75': '74vh'
       },
 

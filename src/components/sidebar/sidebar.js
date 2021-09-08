@@ -44,7 +44,7 @@ export default function Sidebar() {
           }
         },
       },
-      markers: true,
+      markers: false,
     });
     tl.to(".service-section-1", { autoAlpha: 0, duration: 0.4 }, "25%")
       .to(".service-section-2", { autoAlpha: 1 })
