@@ -59,28 +59,29 @@ const JoinUs = ({ data, transitionStatus, entry, exit }) => {
         body="negative-header dark-header"
       />
       <section
-        className="w-full h-screen-66"
+        className="w-full h-screen-66 px-6 bg-white bg-opacity-70 lg:bg-transparent"
         style={{
           backgroundImage: `url(${joinusbg})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          backgroundBlendMode: 'overlay'
         }}>
-        <div className="h-full max-w-screen-xl flex flex-row items-end justify-around pt-12 pb-0 mx-auto">
+        <div className="h-full max-w-screen-xl flex flex-col-reverse lg:flex-row items-end justify-around pt-12 pb-0 mx-auto">
           <img
             src={people}
             alt=""
-            className="w-8/12 max-h-full object-fit object-left-bottom pr-8"
+            className="w-full lg:w-8/12 max-h-full object-fit object-left-bottom pr-8"
           />
-          <div class="w-4/12 h-full flex flex-col items-start justify-between flex-grow">
-            <h1 class="hero-title text-black font-extrabold text-3xl lg:text-6xl mb-4 max-w-24ch">
+          <div className="w-full lg:w-4/12 h-full flex flex-col items-start justify-between flex-grow">
+            <h1 className="text-center lg:text-left hero-title text-black font-extrabold text-3xl lg:text-6xl mb-4 max-w-24ch">
               Find Your Place at SBM
             </h1>
-            <p>
+            <p className=" ">
               We care about our people and are committed to building a team
               filled with proactive members who take an ownership approach to
               all they do.
             </p>
-            <p class="font-bold">All Open Positions</p>
+            <p className="font-bold">All Open Positions</p>
           </div>
         </div>
       </section>
